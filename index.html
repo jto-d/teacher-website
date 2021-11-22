@@ -15,7 +15,55 @@
 
 
         <body>
-            evan lapid
+            <div class='container'>
+
+                <div class="navbar">
+                    <h1>Jeffery Boogaard</h1>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#classes">Classes</a></li>
+                        <li><a href="#clubs">Clubs</a></li>
+                        <li><a href="#calendar">Calendar</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="section" id="home">
+                    evan
+                </div>
+                <div class="section" id="about">
+                    asd
+                </div>
+                <div class="section" id="classes">
+                    asd
+                </div>
+                <div class="section" id="clubs">
+                    asd
+                </div>
+                <div class="section" id="calendar">
+                    asd
+                </div>
+                <div class="section" id="contact">
+                    asd
+                </div>
+
+
+            </div>
+
+            
+
+            <script>
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                    });
+                });
+            });
+            </script>
 
         </body>
 
