@@ -7,36 +7,25 @@
     height: 100vh;
     width: 100%;
 }
-.navbar{
-    margin:2%;
+
+.calendar {
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+#weekdays {
+    margin-top: 5%;
+    width: 70%;
+    display: flex;
+    margin: auto;
     justify-content: space-between;
-    align-items:center; 
-    display:flex;
-    position:fixed;
-    width:90%;
-    background-color: rgba(0, 255, 0, 0.3);
-    
 }
 
-.navbar ul{
-float:right;
+#weekdays div {
+    width: 100px;
+    padding: 10px;
 }
-.navbar li {
-    list-style-type:none;
-    display:inline;
-    align-items: center;
-}
-.navbar ul li a{
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin:.3rem;
-    color:black;
-    transition: .3s ease;
-    border-bottom: white 2px solid transparent;
-}
-
-.navbar ul li a:hover{
-    border-bottom: white 2px solid;
-    color:white
-}
-
