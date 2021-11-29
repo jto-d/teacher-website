@@ -8,6 +8,15 @@
     width: 100%;
 }
 
+.inner-section{
+    background-color:teal;
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:.5%;
+    margin-top:5%;
+}
+
 .navbar{
     margin:2%;
     justify-content: space-between;
@@ -62,4 +71,26 @@ float:right;
 #weekdays div {
     width: 100px;
     padding: 10px;
+}
+
+
+.contact-section{
+    background-color:aqua;
+    margin-top:15%;
+    width:30%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:.5%;
+}
+
+.contact-section form{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.contact-section-input{
+    margin-left:auto;
+    margin-right:auto;
+    align-items: center;
+    width:50%;
 }
