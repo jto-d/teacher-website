@@ -1,20 +1,18 @@
+@font-face {
+    font-family: 'nunito';
+    src: url('Nunito-Regular.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'nunito';
 }
 
 .section {
     height: 100vh;
     width: 100%;
-}
-
-.inner-section{
-    background-color:teal;
-    width:60%;
-    margin-left:auto;
-    margin-right:auto;
-    padding:.5%;
-    margin-top:5%;
+    
 }
 
 .navbar{
@@ -24,12 +22,19 @@
     display:flex;
     position:fixed;
     width:90%;
-    background-color: rgba(0, 255, 0, 0.3);
+    background-color: #222222;
+    padding: .3rem;
+    
     
 }
 
+.navbar h1 {
+    color: #eeee;
+    margin-left: 1rem;
+}
+
 .navbar ul{
-float:right;
+    float:right;
 }
 .navbar li {
     list-style-type:none;
@@ -40,57 +45,54 @@ float:right;
     text-decoration: none;
     font-size: 1.5rem;
     margin:.3rem;
-    color:black;
+    color:#eeee;
     transition: .3s ease;
     border-bottom: white 2px solid transparent;
 }
 
 .navbar ul li a:hover{
-    border-bottom: white 2px solid;
-    color:white
+    border-bottom: #444444 2px solid;
+    color:#444444;
 }
 
+#calendar {
+    box-sizing: border-box;
+    background-color: #111111;
+    color: #eeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .calendar {
-    margin-top: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-wrap: wrap;
-    width: 80%;
+    height: 45rem;
+    width: 50rem;
+    background-color: #222222;
+    box-shadow: 0 0.5rem 3rem rgba(0,0,0,0.4);
 }
 
-#weekdays {
-    margin-top: 7%;
-    width: 70%;
+.month {
+    width: 100%;
+    height: 10rem;
+    background-color: #333333;
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
     justify-content: space-between;
+    text-align: center;
+    text-shadow: 0 .3rem .5rem rgba(0,0,0,0.5);
+}
+
+.month h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+.date {
+    margin: auto;
 }
 
 #weekdays div {
     width: 100px;
     padding: 10px;
-}
-
-
-.contact-section{
-    background-color:aqua;
-    margin-top:15%;
-    width:30%;
-    margin-left:auto;
-    margin-right:auto;
-    padding:.5%;
-}
-
-.contact-section form{
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.contact-section-input{
-    margin-left:auto;
-    margin-right:auto;
-    align-items: center;
-    width:50%;
 }
