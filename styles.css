@@ -22,10 +22,14 @@
     display:flex;
     position:fixed;
     width:90%;
-    background-color: #222222;
+    background-color: #444555;
     padding: .3rem;
-    
-    
+    border-radius:.5rem;
+    box-shadow: 0 0.5rem 3rem rgba(0,0,0,0.4);
+}
+
+.space{
+    height:15%;
 }
 
 .navbar h1 {
@@ -53,6 +57,43 @@
 .navbar ul li a:hover{
     border-bottom: #444444 2px solid;
     color:#444444;
+}
+
+#home .inner-section{
+    background-color:#887d7d;
+    border-radius: .5rem;
+    height: 75vh;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+   display:flex;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+#home .inner-section img{
+    border-radius:.5rem;
+    width: 30rem;
+    
+}
+
+#arrow{
+    
+    height:10rem;
+    margin-top:20%;
+}
+
+#arrow:hover{
+    cursor:pointer;
+}
+
+.numIndex{
+    text-align:center;
+}
+
+.numIndex li{
+    list-style-type:none;
+    display:inline;
 }
 
 #calendar {
