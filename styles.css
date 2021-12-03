@@ -94,6 +94,7 @@
 .numIndex li{
     list-style-type:none;
     display:inline;
+    margin-left:1rem;
 }
 
 #calendar {
