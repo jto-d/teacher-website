@@ -10,18 +10,44 @@ var Interval;
 var seconds;
 var miliseconds;
 var Interval;
+
 window.onload = function() { 
     Interval = setInterval(startTimer, 5000);
+    
 }
-
 
 function startTimer(){
         console.log("run");
         document.getElementById('mainPicture').src = pictures[pictureNum];
+        
+        for(var i = 0;i<numbers.length;i++){
+            if(i!=pictureNum){
+                document.getElementById(numbers[i]).style.color = "white";
+
+            }
+        }
+        
+        document.getElementById(numbers[pictureNum]).style.color = "aqua";
         if(pictureNum > pictures.length-2){
             pictureNum = 0;
         }
         else{
             pictureNum++;
         }
+}
+
+function numClick(x){
+    console.log(x);
+    clearInterval(Interval);
+    Interval = setInterval(startTimer, 5000);
+    pictureNum = x-1;
+    for(var i = 0;i<numbers.length;i++){
+        if(i!=pictureNum){
+            document.getElementById(numbers[i]).style.color = "white";
+
+        }
+    }
+    
+    document.getElementById(numbers[pictureNum]).style.color = "aqua";
+    document.getElementById('mainPicture').src = pictures[x-1];
 }
