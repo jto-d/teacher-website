@@ -15,10 +15,6 @@
     
 }
 
-#home{
-    background-color:#333333;
-}
-
 .navbar{
     margin:2%;
     justify-content: space-between;
@@ -64,31 +60,32 @@
 }
 
 #home .inner-section{
-    background-color:#4C5B61;
+    background-color:#887d7d;
     border-radius: .5rem;
     height: 75vh;
-    width:60%;
+    width:80%;
     margin-left:auto;
     margin-right:auto;
-    text-align:center;
+   display:flex;
     padding: 1rem;
     justify-content: space-between;
-}
-
-#home .inner-section h1{
-    color: white;    
-
 }
 
 #home .inner-section img{
     border-radius:.5rem;
     width: 30rem;
-    height:30rem;
-    border:white .5rem solid;
-
+    
 }
 
+#arrow{
+    
+    height:10rem;
+    margin-top:20%;
+}
 
+#arrow:hover{
+    cursor:pointer;
+}
 
 .numIndex{
     text-align:center;
@@ -97,14 +94,7 @@
 .numIndex li{
     list-style-type:none;
     display:inline;
-    margin-left:1.5rem;
-    cursor: pointer;
-    color:white;
-    transition: .3s ease;
-}
-
-.numIndex li:hover{
-    opacity:50%;
+    margin-left:1rem;
 }
 
 #calendar {
@@ -138,13 +128,15 @@
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: .2rem;
-
+    margin-bottom: 1rem;
 }
 
+.month p {
+    font-size: 1.6rem;
+}
 .date {
     margin: auto;
 }
-
 
 .weekdays {
     width: 100%;
@@ -179,5 +171,4 @@
     justify-content: center;
     align-items: center;
     text-shadow: 0 .3rem .5rem rgba(0,0,0,0.5);
-
 }
