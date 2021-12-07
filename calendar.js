@@ -5,6 +5,15 @@ if(leapYears.includes(date.getFullYear)) {
     months[1][1]=29
 }
 
+const presMonth = date.getMonth()
+
+let events = []
+let e = new Date(2021, 11, 4)
+events.push(e)
+
+console.log(events)
+
+
 const calendar = () => {
     
     
@@ -26,7 +35,12 @@ const calendar = () => {
     const currentMonth = date.getMonth()
     document.querySelector(".date h1").innerHTML = months[currentMonth][0]
 
-    document.querySelector(".date p").innerHTML = date.toDateString()
+    if(currentMonth==presMonth){
+        document.querySelector(".date p").innerHTML = date.toDateString()
+    } else {
+        document.querySelector(".date p").innerHTML = date.getFullYear()
+    }
+
 
     const calDays = document.querySelector(".days")
 
@@ -36,7 +50,7 @@ const calendar = () => {
 
     var days = []
     for(var day = 1; day<=months[currentMonth][1]; day++) {
-        if(day == date.getDate())
+        if((day == date.getDate() && currentMonth==presMonth) || (day==e.getDate() && date.getMonth()==e.getMonth()))
             days.push(`<div class="today">${day}</div>`)
         else
             days.push(`<div>${day}</div>`)
