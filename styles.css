@@ -102,18 +102,25 @@
 
 #calendar {
     box-sizing: border-box;
-    background-color: #111111;
     color: #eeee;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.calendar, .events {
+.calendar {
     margin: 6% 3% 0;
     height: 40rem;
     width: 45rem;
     background-color: #222222;
     box-shadow: 0 0.5rem 3rem rgba(0,0,0,0.4);
+}
+
+#event{
+    height: 5rem;
+    width: 10rem;
+    background-color: #333333;
+    visibility: hidden;
+
 }
 
 .month {
@@ -198,5 +205,11 @@
 .today {
     background-color: #444444;
     outline: .2rem solid #777777;
+    cursor: pointer;
+}
+
+.calEvent {
+    background-color: #555555;
+    outline: .2rem solid aqua;
     cursor: pointer;
 }

@@ -9,13 +9,14 @@ const presMonth = date.getMonth()
 
 let events = []
 let e = new Date(2021, 11, 4)
-events.push(e)
+let d = new Date(2022, 0, 3)
+events.push(e, d)
 
-console.log(events)
 
 
-const calendar = () => {
-    
+
+const calendar = () => {   
+    document.getElementById("event").style.visibility="hidden"
     
     const months = [
         ["January", 31],
@@ -50,10 +51,19 @@ const calendar = () => {
 
     var days = []
     for(var day = 1; day<=months[currentMonth][1]; day++) {
-        if((day == date.getDate() && currentMonth==presMonth) || (day==e.getDate() && date.getMonth()==e.getMonth()))
+        let added = false
+        if(day == date.getDate() && currentMonth==presMonth) {
             days.push(`<div class="today">${day}</div>`)
-        else
-            days.push(`<div>${day}</div>`)
+            added = true
+        }
+        for(let el of events) { 
+            if(day.toString()==el.getDate() && currentMonth==el.getMonth()) {
+                days.push(`<div class="calEvent">${day}</div>`)
+                added = true
+            }        
+        }
+        if(!added) 
+            days.push(`<div>${day}</div>`)        
     }
 
     if(currentMonth == 0)
@@ -74,6 +84,13 @@ const calendar = () => {
 
 
     calDays.innerHTML = prevDays.join('') + days.join('') + nextDays.join('')
+
+    const calEvents = document.querySelectorAll(".calEvent")
+    for(let el of calEvents) {
+        el.addEventListener("click", () => {
+            document.getElementById("event").style.visibility="visible"
+        })
+    }
 }
 
 document.querySelector(".prev").addEventListener("click", () => {
@@ -81,12 +98,15 @@ document.querySelector(".prev").addEventListener("click", () => {
     calendar()
   })
   
-  document.querySelector(".next").addEventListener("click", () => {
+document.querySelector(".next").addEventListener("click", () => {
     date.setMonth(date.getMonth() + 1)
-    console.log(date)
     calendar()
   })
+
+
+
   
 calendar()
+
 
 
