@@ -9,7 +9,7 @@
             <link rel="stylesheet" href="styles.css">
             <script src="https://unpkg.com/petite-vue" defer init></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
-            
+            <script src="index.js"></script>
 
 
         </head>
@@ -35,29 +35,46 @@
                     <div class="space">a</div>
                     <div class="numIndex">
                         <ul>
-                            <li id="indexOne">1</li>
-                            <li id="indexTwo">2</li>
-                            <li id="indexThree">3</li>
-                            <li id="indexFour">4</li>
-                            <li id="indexFive">5</li>
+                            <li id="indexOne" style="color:aqua" onclick = "numClick(1)">1</li>
+                            <li id="indexTwo" onclick = "numClick(2)">2</li>
+                            <li id="indexThree" onclick = "numClick(3)">3</li>
+                            <li id="indexFour" onclick = "numClick(4)">4</li>
+                            <li id="indexFive" onclick = "numClick(5)">5</li>
                         </ul>
                     </div>
                     <div class="inner-section">
-                        <img src="newarrow2.png" alt="arrow" id="arrow" onclick="leftArrow()">
-                        <div class="slideshow">
-                            
-                            <img src="boogaard.jpeg" alt="boogaard" id="mainPicture">
+                        <h1>Welcome to my Page!</h1>
+                        <div class="slideshow" >
+                            <img src="home-pictures/boogaard.jpeg" alt="boogaard" id="mainPicture">
                         </div>
-                        <img src="arrow-png-download.png" alt="arrow" id="arrow" onclick="rightArrow()">
-                        
                     </div>
 
                 </div>
                 <div class="section" id="about">
-                    asd
+                    <div class="container">
+                        <h1>About Me!</h1>
+                    </div>
                 </div>
                 <div class="section" id="classes">
-                    asd
+                    <div class="space">a</div>
+                     <div class="group">
+                        <div class="class" id="AccelUSI">
+                            <h1>Accel US History I</h1>
+                        </div>
+                        <div class="class" id="APGOV">
+                            <h1>AP US Government & Politics</h1>
+                        </div>
+                    
+                       
+                    </div>
+                    <div class="group">
+                        <div class="class" id="CPCriminalLaw">
+                            <h1>CP Criminal Law</h1>
+                        </div>
+                        <div class="class" id="Economics">
+                            <h1> CP Economics</h1>
+                        </div>
+                    </div>
                 </div>
                 <div class="section" id="clubs">
                     asd
