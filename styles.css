@@ -42,16 +42,17 @@
 .navbar ul{
     float:right;
 }
-.navbar li {
+.navbar ul li {
     list-style-type:none;
     display:inline;
     align-items: center;
 }
 .navbar ul li a{
     text-decoration: none;
-    font-size: 1.5rem;
-    margin:.3rem;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
     color:#eeee;
+    margin: 1rem;
     transition: .3s ease;
     border-bottom: white 2px solid transparent;
 }
@@ -64,9 +65,9 @@
 /* HomePage */
 
 #home .inner-section{
-    background-color:#4C5B61;
+    background-color:#333333;
     border-radius: .5rem;
-    height: 85vh;
+    height: 40rem;
     width:80%;
     margin-left:auto;
     margin-right:auto;
@@ -82,6 +83,7 @@
 
 #home .inner-section img{
     border-radius:.5rem;
+    margin-top: 2%;
     width: 30rem;
     height:30rem;
     border:white .5rem solid;
@@ -310,14 +312,14 @@
 
 .today {
     background-color: #444444;
-    outline: .2rem solid #777777;
+    outline: .2rem solid aqua;
     border-radius: .5rem;
     cursor: pointer;
 }
 
 .calEvent {
     background-color: #555555;
-    outline: .2rem solid aqua;
+    outline: .2rem solid #777777;
     border-radius: .5rem;
     cursor: pointer;
 }
