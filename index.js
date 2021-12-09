@@ -52,3 +52,4 @@ function numClick(x){
     document.getElementById(numbers[pictureNum]).style.color = "aqua";
     document.getElementById('mainPicture').src = pictures[x-1];
 }
+
