@@ -64,10 +64,10 @@
 /* HomePage */
 
 #home .inner-section{
-    background-color:#333333;
+    background-color:#4C5B61;
     border-radius: .5rem;
-    height: 75vh;
-    width:60%;
+    height: 85vh;
+    width:80%;
     margin-left:auto;
     margin-right:auto;
     text-align:center;
@@ -87,8 +87,6 @@
     border:white .5rem solid;
 
 }
-
-
 
 .numIndex{
     text-align:center;
@@ -126,13 +124,28 @@
     margin:.5rem;
     border-radius:.5rem;
     transition:.5s ease-in-out;
+    text-align:center;
     
+}
+
+.class h1{
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+    border: white 1px solid;
+    border-radius: .5 rem;
 }
 
 
 #AccelUSI{
     background-image:url('classes pictures/FBgmTe2XsAI4p2M.jpeg');
-    background-size: 100% 100%;;
+    background-size: 100% 100%;
+    transition: .5s ease;
+}
+
+#AccelUSI:hover{
+    background-image: url('classes pictures/FBgmTe2XsAI4p2M-2.jpg');
+    cursor: pointer;
 }
 
 #APGOV{
@@ -140,19 +153,31 @@
     background-size: 100% 100%;
 }
 
+#APGOV:hover{
+    background-image: url('classes pictures/thinkorswim_installer.jpg');
+    cursor: pointer;
+}
+
 #CPCriminalLaw{
-    background-image: url('classes pictures/download.jpeg');
+    background-image: url('classes pictures/criminal law.jpg');
+    background-size: 100% 100%;
+
+}
+#CPCriminalLaw:hover{
+    background-image: url('classes pictures/criminal law-2.jpg');
+    cursor:pointer;
 }
 
 #Economics{
-    background-image: url('classes pictures/download.png');
-    
+    background-image: url('');
+    transition:.5s ease;
 }
 
-.class:hover {
+#Economics:hover{
     cursor:pointer;
-    opacity:70%;
 }
+
+
 
 .class h1{
     margin-top:20%;
@@ -161,8 +186,9 @@
     color:white;
 }
 
+
 .class:hover h1{
-    opacity:130%;
+    opacity:100%;
 }
 
 /*Clubs*/
