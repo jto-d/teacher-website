@@ -8,8 +8,9 @@
         
             <link rel="stylesheet" href="styles.css">
             <script src="https://unpkg.com/petite-vue" defer init></script>
-            <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
             <script src="index.js"></script>
+
 
         </head>
 
@@ -30,7 +31,7 @@
                 </div>
                 
                 <div class="section" id="home">
-                    
+
                     <div class="space">a</div>
                     <div class="numIndex">
                         <ul>
@@ -47,24 +48,21 @@
                             <img src="home-pictures/boogaard.jpeg" alt="boogaard" id="mainPicture">
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="section" id="about">
                     <div class="container">
                         <h1>About Me!</h1>
                     </div>
                 </div>
-                
                 <div class="section" id="classes">
                     <div class="space">a</div>
                      <div class="group">
                         <div class="class" id="AccelUSI">
                             <h1>Accel US History I</h1>
-                            <p>(Grades 10, 11) –  This course is designed  to  study the United  States from early exploration and settlement to Reconstruction. Current events and geographical studies are an integral part of the course requirements.</p>
                         </div>
                         <div class="class" id="APGOV">
                             <h1>AP US Government & Politics</h1>
-                            <p>Advanced Placement U.S. Government and Politics allows students with a high interest level in government, politics, history, or law to gain a deeper understanding of how  our  federal government evolved  and  how  it  works today. Units addressed include the constitutional underpinnings of the U.S. Government, political beliefs  and behaviors, political parties, interest groups,  the  mass  media,  the  Congress,  the  Presidency,  the  bureaucracy, the Federal Courts, public policy, civil rights, and civil liberties. In addition to the textbook and supplemental readings, students are expected to follow national news events closely throughout the year. This course prepares students to take the AP test in U.S. Government and Politics in May.</p>
                         </div>
                     
                        
@@ -72,12 +70,9 @@
                     <div class="group">
                         <div class="class" id="CPCriminalLaw">
                             <h1>CP Criminal Law</h1>
-                            <p>(Grades 10, 11, 12) - This is a semester-long elective course open to juniors and seniors      that allows students to gain an introduction to the study of criminal law and criminal justice and the problems posed in the 21st century.  Topics to be addressed include the nature and causes of crime  in America; crimes  against the person; crimes against property; defenses; the criminal justice process – including criminal investigations, pretrial proceedings, trial procedures, sentencing, and corrections; the juvenile justice system; and civil rights protections for both criminals and victims.</p>
-                            
                         </div>
                         <div class="class" id="Economics">
                             <h1> CP Economics</h1>
-                            <p>(Grades 10, 11, 12) - This is a dynamic examination of the fundamental principles which govern economic activities at both the level of the individual and that of the aggregate economy. In addition to preparing a student in both microeconomics and macroeconomics, a major emphasis of this course is on the development of critical-thinking skills and the application of economic principles and methodologies in   problem-solving. Consequently, the course incorporates a wide variety of activities including formal instruction in writing, debates, presentations, research projects, and problem-solving competitions in addition to traditional lectures, incorporation of community resources, exams, and simulation activities</p>
                         </div>
                     </div>
                 </div>
@@ -87,10 +82,12 @@
                 <div class="section" id="calendar">
                     <div class="calendar">
                         <div class="month">
+                            <i class="fas fa-angle-left prev"></i>
                             <div class="date">
-                                <h1>January</h1>
-                                <p>Fri January 7, 2022</p>
+                                <h1></h1>
+                                <p></p>
                             </div>
+                            <i class="fas fa-angle-right next"></i>
                         </div>
                         <div class="weekdays">
                             <div>Mon</div>
@@ -101,50 +98,12 @@
                             <div>Sat</div>
                             <div>Sun</div>
                         </div>
-                        <div class="days">
-                            <div class="prev-date">6</div>
-                            <div class="prev-date">5</div>
-                            <div class="prev-date">4</div>
-                            <div class="prev-date">3</div>
-                            <div class="prev-date">2</div>
-                            <div>1</div>
-                            <div>2</div>
-                            <div>3</div>
-                            <div>4</div>
-                            <div>5</div>
-                            <div>6</div>
-                            <div>7</div>
-                            <div>8</div>
-                            <div>9</div>
-                            <div>10</div>
-                            <div>11</div>
-                            <div>12</div>
-                            <div>13</div>
-                            <div>14</div>
-                            <div>15</div>
-                            <div>16</div>
-                            <div>17</div>
-                            <div>18</div>
-                            <div>19</div>
-                            <div>20</div>
-                            <div>21</div>
-                            <div>22</div>
-                            <div>23</div>
-                            <div>24</div>
-                            <div>25</div>
-                            <div>26</div>
-                            <div>27</div>
-                            <div>28</div>
-                            <div>29</div>
-                            <div>30</div>
-                            <div>31</div>
-                            <div class="next-date">2</div>
-                            <div class="next-date">3</div>
-                            <div class="next-date">4</div>
-                            <div class="next-date">5</div>
-                            <div class="next-date">6</div>
-                        </div>
+                        <div class="days"></div>
                     </div>
+                    <div id="event">
+                        help me
+                    </div>
+                    
                 </div>
                 <div class="section" id="contact">
 
@@ -154,8 +113,28 @@
 
             </div>
 
+            <script type="module">
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
+                import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics.js";
+                
+                const firebaseConfig = {
+                  apiKey: "AIzaSyALDm_W9NTeEAzW2xG0T1L8uFkpz729osI",
+                  authDomain: "boogaardcalendar.firebaseapp.com",
+                  projectId: "boogaardcalendar",
+                  storageBucket: "boogaardcalendar.appspot.com",
+                  messagingSenderId: "115388225792",
+                  appId: "1:115388225792:web:7eea241b63210b3a267be5",
+                  measurementId: "G-1TZP3QNMHC"
+                };
+              
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                const analytics = getAnalytics(app);
+            </script>
+
+
             <script src="calendar.js"></script>
-            
+            <script src="index.js"></script>
             <script>
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     anchor.addEventListener('click', function (e) {
