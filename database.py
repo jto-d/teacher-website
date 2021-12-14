@@ -1,13 +1,8 @@
-import sqlite3
+import pymongo
 
-connection = sqlite3.connect('calendar.db')
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+db = myclient["calendar"]
 
-cursor = connection.cursor()
+col = db["events"]
 
-cursor.execute('''CREATE TABLE IF NOT EXISTS Shows
-              (Date TEXT, Event TEXT, Description TEXT)''')
-
-connection.commit()
-connection.close()
-
-print("help")
+print(db.list_collection_names())

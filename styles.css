@@ -235,7 +235,7 @@ body{
     box-shadow: 0 0.5rem 3rem rgba(0,0,0,0.4);
 }
 
-#event{
+#event-left, #event-right{
     height: 5rem;
     width: 10rem;
     background-color: #333333;
@@ -246,6 +246,7 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 
 #event p {
     margin: auto;

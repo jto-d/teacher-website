@@ -16,7 +16,8 @@ events.push(e, d)
 
 
 const calendar = () => {   
-    document.getElementById("event").style.visibility="hidden"
+    document.getElementById("event-left").style.visibility="hidden"
+    document.getElementById("event-right").style.visibility="hidden"
     
     const months = [
         ["January", 31],
@@ -88,7 +89,8 @@ const calendar = () => {
     const calEvents = document.querySelectorAll(".calEvent")
     for(let el of calEvents) {
         el.addEventListener("click", () => {
-            document.getElementById("event").style.visibility="visible"
+            document.getElementById("event-left").style.visibility="visible"
+            document.getElementById("event-right").style.visibility="visible"
         })
     }
 }
