@@ -8,8 +8,9 @@
         
             <link rel="stylesheet" href="styles.css">
             <script src="https://unpkg.com/petite-vue" defer init></script>
-            <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
             <script src="index.js"></script>
+
 
         </head>
 
@@ -29,7 +30,7 @@
                     </ul>
                 </div>
                 
-                <div class="section" id="home">
+                  <div class="section" id="home">
                     
                     <div class="space">a</div>
                     <div class="numIndex">
@@ -82,15 +83,30 @@
                     </div>
                 </div>
                 <div class="section" id="clubs">
-                    asd
+                    <div class="space">a</div>
+                    <div class="choice-bar">
+                        <ul>
+                            <li onclick="changeAcChal()">Academic Challenge</li>
+                            <li onclick="changeModelUN()">Model UN</li>
+                        </ul>
+                    </div>
+                    <div class="club" id="acChal">
+                        <h1>Academic Challenge</h1>
+                    </div>
+                    
+                    <div class="club" id="modelUN">
+                        <h1>Model United Nations</h1>
+                    </div>
                 </div>
                 <div class="section" id="calendar">
                     <div class="calendar">
                         <div class="month">
+                            <i class="fas fa-angle-left prev"></i>
                             <div class="date">
-                                <h1>January</h1>
-                                <p>Fri January 7, 2022</p>
+                                <h1></h1>
+                                <p></p>
                             </div>
+                            <i class="fas fa-angle-right next"></i>
                         </div>
                         <div class="weekdays">
                             <div>Mon</div>
@@ -101,50 +117,12 @@
                             <div>Sat</div>
                             <div>Sun</div>
                         </div>
-                        <div class="days">
-                            <div class="prev-date">6</div>
-                            <div class="prev-date">5</div>
-                            <div class="prev-date">4</div>
-                            <div class="prev-date">3</div>
-                            <div class="prev-date">2</div>
-                            <div>1</div>
-                            <div>2</div>
-                            <div>3</div>
-                            <div>4</div>
-                            <div>5</div>
-                            <div>6</div>
-                            <div>7</div>
-                            <div>8</div>
-                            <div>9</div>
-                            <div>10</div>
-                            <div>11</div>
-                            <div>12</div>
-                            <div>13</div>
-                            <div>14</div>
-                            <div>15</div>
-                            <div>16</div>
-                            <div>17</div>
-                            <div>18</div>
-                            <div>19</div>
-                            <div>20</div>
-                            <div>21</div>
-                            <div>22</div>
-                            <div>23</div>
-                            <div>24</div>
-                            <div>25</div>
-                            <div>26</div>
-                            <div>27</div>
-                            <div>28</div>
-                            <div>29</div>
-                            <div>30</div>
-                            <div>31</div>
-                            <div class="next-date">2</div>
-                            <div class="next-date">3</div>
-                            <div class="next-date">4</div>
-                            <div class="next-date">5</div>
-                            <div class="next-date">6</div>
-                        </div>
+                        <div class="days"></div>
                     </div>
+                    <div id="event">
+                        help me
+                    </div>
+                    
                 </div>
                 <div class="section" id="contact">
 
@@ -154,8 +132,28 @@
 
             </div>
 
+            <script type="module">
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
+                import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics.js";
+                
+                const firebaseConfig = {
+                  apiKey: "AIzaSyALDm_W9NTeEAzW2xG0T1L8uFkpz729osI",
+                  authDomain: "boogaardcalendar.firebaseapp.com",
+                  projectId: "boogaardcalendar",
+                  storageBucket: "boogaardcalendar.appspot.com",
+                  messagingSenderId: "115388225792",
+                  appId: "1:115388225792:web:7eea241b63210b3a267be5",
+                  measurementId: "G-1TZP3QNMHC"
+                };
+              
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                const analytics = getAnalytics(app);
+            </script>
+
+
             <script src="calendar.js"></script>
-            
+            <script src="index.js"></script>
             <script>
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     anchor.addEventListener('click', function (e) {

@@ -52,4 +52,21 @@ function numClick(x){
     document.getElementById(numbers[pictureNum]).style.color = "aqua";
     document.getElementById('mainPicture').src = pictures[x-1];
 }
+var current = 1;
+function changeAcChal(){
 
+    if(current == 1){
+        document.getElementById('acChal').style.display = 'block';
+        document.getElementById('modelUN').style.display = 'none';
+        current = 2;
+    }
+}
+
+function changeModelUN(){
+    if(current == 2){
+        document.getElementById('acChal').style.display = 'none';
+        document.getElementById('modelUN').style.display = 'block';
+        current = 1;
+    }
+   
+}
