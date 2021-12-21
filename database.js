@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, child, get } from "firebase/database";
 
-const date = new Date(2021, 12, 12)
+const date = new Date(2021, 11, 12)
 
 // Set the configuration for your app
 // TODO: Replace with your app's config object
@@ -17,17 +17,18 @@ const firebaseApp = initializeApp(firebaseConfig);
 const database = getDatabase(firebaseApp);
 const dbRef = ref(getDatabase())
 
-function writeEvent(eventId, name, year, month, day, type) {
+function writeEvent(eventId, name, year, month, day, type, classname) {
   set(ref(database, 'events/' + eventId), {
     name: name,
     year: year,
     month: month,
     day: day,
     type: type,
+    classname: classname
   });
 }
 
-writeEvent(0, "help me please", date.getFullYear(), date.getMonth(), date.getDay(), "test")
+writeEvent(0, "help me please", date.getFullYear(), date.getMonth(), date.getDate(), "test", "watermelon")
 
 get(child(dbRef, `events/${0}`)).then((snapshot) => {
   if(snapshot.exists()) {
