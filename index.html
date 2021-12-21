@@ -10,7 +10,6 @@
             <script src="https://unpkg.com/petite-vue" defer init></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
             <script src="index.js"></script>
-            <script src="database.js"></script>
 
 
 
@@ -125,28 +124,11 @@
 
             </div>
 
-            <script type="module">
-                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
-                import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics.js";
-                
-                const firebaseConfig = {
-                  apiKey: "AIzaSyALDm_W9NTeEAzW2xG0T1L8uFkpz729osI",
-                  authDomain: "boogaardcalendar.firebaseapp.com",
-                  projectId: "boogaardcalendar",
-                  storageBucket: "boogaardcalendar.appspot.com",
-                  messagingSenderId: "115388225792",
-                  appId: "1:115388225792:web:7eea241b63210b3a267be5",
-                  measurementId: "G-1TZP3QNMHC"
-                };
-              
-                // Initialize Firebase
-                const app = initializeApp(firebaseConfig);
-                const analytics = getAnalytics(app);
-            </script>
+            
 
 
-            <script src="calendar.js"></script>
-            <script src="index.js"></script>
+            <script type="module" src="calendar.js"></script>
+
             <script>
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     anchor.addEventListener('click', function (e) {
