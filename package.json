@@ -1,19 +1,25 @@
 {
-  "name": "database",
+  "type": "module",
+  "name": "calendar",
   "version": "1.0.0",
-  "description": "",
-  "main": "database.js",
+  "description": "website for a teacher using html, css, vanilla js, flask, and mongodb",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=development"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "jack o'donnell",
+  "license": "MIT",
   "dependencies": {
     "firebase": "^9.6.1"
   },
   "devDependencies": {
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "teacher-website"
   }
 }
