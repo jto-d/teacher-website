@@ -1,0 +1,15 @@
+{
+  "name": "teacher-website",
+  "version": "1.0.0",
+  "description": "website for a teacher using html, css, vanilla js, flask, and firebase",
+  "main": "server.js",
+  "scripts": {
+    "start":"nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
