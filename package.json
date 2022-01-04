@@ -1,25 +1,15 @@
 {
-  "type": "module",
-  "name": "calendar",
+  "name": "teacher-website",
   "version": "1.0.0",
-  "description": "website for a teacher using html, css, vanilla js, flask, and mongodb",
-  "private": true,
+  "description": "website for a teacher using html, css, vanilla js, flask, and firebase",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=development"
+    "start":"nodemon server.js"
   },
-  "keywords": [],
-  "author": "jack o'donnell",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "firebase": "^9.6.1"
-  },
-  "devDependencies": {
-    "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "teacher-website"
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
   }
 }
