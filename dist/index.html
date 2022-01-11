@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="admin.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>test</h1>
+
+    <h2>uploaddddd</h2>
+
+    <form class='add'>
+        <label for='classname'>Class:</label>
+        <select id='classname' name='classname' required>
+            <option value="gov">AP Gov</option>
+            <option value="accel">Accel US History I</option>
+            <option value="econ">CP Economics</option>
+            <option value="crime">CP Criminal Law</option>
+        </select>
+
+        <label for='type'>Type:</label>
+        <select id='type' name='type' required>
+            <option value="homework">Homework</option>
+            <option value="test">Test</option>
+            <option value="project">Project</option>
+            <option value="quiz">Quiz</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+        <label for='title'>Title:</label>
+        <input type='text' name='name' required>
+        <br>
+        <label for='description'>Description:</label>
+        <input type='text' name='description' required>
+        <br>
+        <label for='date'>Date:</label>
+        <input type='text' name='date' value='dd-mm-yy' required>
+
+        <br>
+        <button>Submit</button>
+
+    </form>
+
+    <h2>deleteeeeeeee</h2>
+
+    <form class='delete'>
+        <label for="id">Document id:</label>
+        <input type="text" name='id' required>
+
+        <button>Submit</button>
+
+    </form>
+
+    <script src='bundle.js'></script>
+</body>
+</html>
