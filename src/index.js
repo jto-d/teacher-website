@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { 
-  getDocs, getFirestore, collection,
+  onSnapshot, getFirestore, collection,
   addDoc
 } from "firebase/firestore"
 
@@ -31,22 +31,18 @@ console.log('success')
  // refer to collection
 const colRef = collection(db, "events")
 
- // get collection
-getDocs(colRef)
-  .then((snapshot) => {
-    let events = []
-    snapshot.docs.forEach((doc) => {
-      events.push({ ...doc.data(), id: doc.id })
-    })
-    console.log(events)
+ // real time data collection
+onSnapshot(colRef, (snapshot) => {
+  let events = []
+  snapshot.docs.forEach((doc) => {
+    events.push({ ...doc.data(), id: doc.id })
   })
-  .catch(err => {
-    console.log(err.message)
-  })
+  console.log(events)
+})
 
 // add event
 const addEventForm = document.querySelector('.add')
-addBookForm.addEventListener('submit', (e) => {
+addEventForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
   addDoc(colRef, {
@@ -55,15 +51,14 @@ addBookForm.addEventListener('submit', (e) => {
     type: addEventForm.type.value,
   })
   .then(() => {
-    addBookForm.reset()
+    addEventForm.reset()
   })
-
-
 })
 
 // delete event
 const deleteEventForm = document.querySelector('.delete')
-deleteBookForm.addEventListener('submit', (e) => {
+deleteEventForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
 })
+
