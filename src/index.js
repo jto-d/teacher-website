@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { 
   onSnapshot, getFirestore, collection,
-  addDoc, query, orderBy, deleteDoc, where, doc
+  addDoc, query, orderBy, deleteDoc, where, doc,
+  getDoc, updateDoc
 } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -25,15 +26,14 @@ console.log('success')
 // refer to collection
 const colRef = collection(db, "events")
 
-// queries
-let date = '01-12-22'
-const qRef = query(colRef, orderBy('classname', 'asce'))
+// // queries
+const q = query(colRef, orderBy('classname'))
 
 
 
 // real time data collection
 // instead of colRef, use q to synthesize with queries
-onSnapshot(qRef, (snapshot) => {
+onSnapshot(q, (snapshot) => {
   let events = []
   snapshot.docs.forEach((doc) => {
     events.push({ ...doc.data(), id: doc.id })
@@ -50,6 +50,7 @@ addEventForm.addEventListener('submit', (e) => {
     classname: addEventForm.classname.value,
     event: addEventForm.name.value,
     type: addEventForm.type.value,
+    date: addEventForm.date.value
   })
   .then(() => {
     addEventForm.reset()
@@ -61,5 +62,38 @@ const deleteEventForm = document.querySelector('.delete')
 deleteEventForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
+  const docRef = doc(db, 'events', deleteEventForm.id.value)
+
+  deleteDoc(docRef)
+    .then(() => {
+      deleteEventForm.reset()
+    })
+
 })
 
+// get a single document
+const docRef = doc(db, 'events', '6uERDX0Iet8cg8JZENij')
+
+getDoc(docRef)
+  .then((doc) => {
+    console.log(doc.data(), doc.id)
+  })
+
+// update a document
+const updateForm = document.querySelector('.update')
+updateForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  const docRef = doc(db, 'events', updateForm.id.value)
+
+  //make html update form
+  //work on accordion css for all
+
+  //update form should include field of update and what to update it to
+  updateDoc(docRef, {
+    title: 'updated'
+  })
+  .then(() => {
+    updateForm.reset()
+  })
+})
