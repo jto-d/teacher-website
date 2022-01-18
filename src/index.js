@@ -1,9 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { 
   onSnapshot, getFirestore, collection,
-  addDoc
+  addDoc, query, orderBy, deleteDoc, where, doc
 } from "firebase/firestore"
-
 
 const firebaseConfig = {
     apiKey: "AIzaSyDDAyYzkAmrhWAblRWYbn2fi2L_i0JhHqY",
@@ -16,23 +15,25 @@ const firebaseConfig = {
     measurementId: "G-7YPVCGYMBX"
   };
 
-console.log('webpack wroking')
-
-
-
-
- // init firebase app
+// init firebase app
 initializeApp(firebaseConfig)
 
- // init database
+// init database
 const db = getFirestore()
 console.log('success')
 
- // refer to collection
+// refer to collection
 const colRef = collection(db, "events")
 
- // real time data collection
-onSnapshot(colRef, (snapshot) => {
+// queries
+let date = '01-12-22'
+const qRef = query(colRef, orderBy('classname', 'asce'))
+
+
+
+// real time data collection
+// instead of colRef, use q to synthesize with queries
+onSnapshot(qRef, (snapshot) => {
   let events = []
   snapshot.docs.forEach((doc) => {
     events.push({ ...doc.data(), id: doc.id })
