@@ -7,58 +7,78 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Admin Page</h1>
+    
+    <div class="container">
+        <h1>Admin Page</h1>
+        <button class='dropdown'>Upload Event</button>
+        <div class='dropdown-menu'>
+            <form class='add' >
+                <ul>
+                    <li>
+                        <label for='classname'>Class:</label>
+                        <select id='classname' name='classname' required>
+                            <option value="gov">AP Gov</option>
+                            <option value="accel">Accel US History I</option>
+                            <option value="econ">CP Economics</option>
+                            <option value="crime">CP Criminal Law</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for='type'>Type:</label>
+                        <select id='type' name='type' required>
+                            <option value="homework">Homework</option>
+                            <option value="test">Test</option>
+                            <option value="project">Project</option>
+                            <option value="quiz">Quiz</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for='title'>Title:</label>
+                        <input type='text' name='name' required>
+                    </li>
+                    <li>
+                        <label for='description'>Description:</label>
+                        <input type='text' name='description' required>
+                    </li>
+                    <li>
+                        <label for='date'>Date:</label>
+                        <input type='text' name='date' value='dd-mm-yy' required>
+                    </li>
+                    <button>Submit</button>
+                </ul>
+            </form>
+        </div>
+        
+        <button class='dropdown'>Delete</button>
+        <div class="dropdown-menu">
+            <form class='delete'>
+                <ul>
+                    <li>    
+                        <label for="id">Document id:</label>
+                        <input type="text" name='id' required>
+                    </li>
+                    <button>Submit</button>
+                </ul> 
+            </form>
+        </div>
 
-    <button class='dropdown'>Upload</button>
-    <div class='dropdown-menu'>
-        <form class='add' >
-            <ul>
-                <li>
-                    <label for='classname'>Class:</label>
-                    <select id='classname' name='classname' required>
-                        <option value="gov">AP Gov</option>
-                        <option value="accel">Accel US History I</option>
-                        <option value="econ">CP Economics</option>
-                        <option value="crime">CP Criminal Law</option>
-                    </select>
-                </li>
-                <li>
-                    <label for='type'>Type:</label>
-                    <select id='type' name='type' required>
-                        <option value="homework">Homework</option>
-                        <option value="test">Test</option>
-                        <option value="project">Project</option>
-                        <option value="quiz">Quiz</option>
-                        <option value="other">Other</option>
-                    </select>
-                </li>
-                <li>
-                    <label for='title'>Title:</label>
-                    <input type='text' name='name' required>
-                </li>
-                <li>
-                    <label for='description'>Description:</label>
-                    <input type='text' name='description' required>
-                </li>
-                <li>
-                    <label for='date'>Date:</label>
-                    <input type='text' name='date' value='dd-mm-yy' required>
-                </li>
-                <button>Submit</button>
-            </ul>
-        </form>
-    
-    
+        <button class='dropdown'>Update</button>
+        <div class="dropdown-menu">
+            <form class='update'>
+                <ul>
+                    <li>    
+                        <label for="id">Document id:</label>
+                        <input type="text" name='id' required>
+                    </li>
+                    <button>Submit</button>
+                </ul>
+            </form>
+        </div>
+        
     </div>
-    <h2>deleteeeeeeee</h2>
-
-    <form class='delete'>
-        <label for="id">Document id:</label>
-        <input type="text" name='id' required>
-
-        <button>Submit</button>
-
-    </form>
+    
+    
 
     <script src='bundle.js'></script>
     <script>
