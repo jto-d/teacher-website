@@ -66,13 +66,43 @@ h1 {
     transition: max-height 0.2s ease-out;
   }
 
-
-.two-columns label{
-    display: inline-block;
+textarea {
+    resize: none;
+    height: 100px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+form label {
+    margin-top: 1%;
+
+}
+
+form input, textarea, select {
+    width: 100%;
+    border: none;
+    border-radius: .2em;
+    background-color: #333333;
+    color: white;
+}
+
+.inner-form {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+.top-form .inner-form {
+    width: 45%;
+    float: left;
+}
+
+
+.submit-btn {
+    background-color: #333333;
+    color: #777777;
+    border: none;
+    border-radius: .5em;
+    width: 50%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    margin-left: 2.5%;
+    cursor: pointer;
 }
 
