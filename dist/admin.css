@@ -71,11 +71,6 @@ textarea {
     height: 100px;
 }
 
-form label {
-    margin-top: 1%;
-
-}
-
 form input, textarea, select {
     width: 100%;
     border: none;
@@ -87,6 +82,7 @@ form input, textarea, select {
 .inner-form {
     margin-left: 2.5%;
     margin-right: 2.5%;
+
 }
 .top-form .inner-form {
     width: 45%;
@@ -96,7 +92,7 @@ form input, textarea, select {
 
 .submit-btn {
     background-color: #333333;
-    color: #777777;
+    color: #ffffff;
     border: none;
     border-radius: .5em;
     width: 50%;
@@ -104,5 +100,10 @@ form input, textarea, select {
     margin-bottom: 1.5%;
     margin-left: 2.5%;
     cursor: pointer;
+    transition: .3s ease;
 }
 
+.submit-btn:hover {
+    color: #888888;
+    background-color: #444444;
+}
