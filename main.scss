@@ -1,0 +1,32 @@
+
+
+$theme-colors: (
+  "primary": #34312D,
+  "background": #333333,
+  "nav": #111111,
+);
+
+.space{
+  width:100%;
+  height:12vh;
+}
+.navbar-brand ul{
+    text-decoration:none
+    
+}
+ul.list-group:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+.list-group-item {
+    float: left;
+}
+
+.section{
+  height: 100vh;
+  width:100%;
+}
+
+@import "node_modules/bootstrap/scss/bootstrap";
