@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { 
   onSnapshot, getFirestore, collection,
-  addDoc, query, orderBy, deleteDoc, where, doc,
+  setDoc, query, orderBy, deleteDoc, where, doc,
   getDoc, updateDoc
 } from "firebase/firestore"
 
@@ -46,12 +46,12 @@ const addEventForm = document.querySelector('.add')
 addEventForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
-  addDoc(colRef, {
+  setDoc(colRef, 'events', addEventForm.name.value), {
     classname: addEventForm.classname.value,
     event: addEventForm.name.value,
     type: addEventForm.type.value,
     date: addEventForm.date.value
-  })
+  }
   .then(() => {
     addEventForm.reset()
   })
@@ -59,6 +59,20 @@ addEventForm.addEventListener('submit', (e) => {
 
 // delete event
 const deleteEventForm = document.querySelector('.delete')
+
+let select = document.queryElementById("selectid")
+let options = []
+for(let i=0;i<events.length;i++) {
+  options.append(events[i].name.value)
+}
+for(let i = 0; i< options.length; i++) {
+  let opt = options[i]
+  let el = document.createElemnet("option")
+  el.textContent = opt;
+  el.value = opt;
+  select.appendChild(el);
+}
+
 deleteEventForm.addEventListener('submit', (e) => {
   e.preventDefault()
 

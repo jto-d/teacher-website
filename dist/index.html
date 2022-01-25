@@ -25,7 +25,7 @@
                     </div>
                     <div class="inner-form">
                         <label for='type'>Type</label>
-                        <select id='type' name='type' required>
+                        <select id='type' id='selectid' name='type' required>
                             <option value="homework">Homework</option>
                             <option value="test">Test</option>
                             <option value="project">Project</option>
@@ -49,9 +49,7 @@
                     <label for='date'>Date</label>
                     <input type='text' name='date' value='dd-mm-yy' required>
                 </div>
-                
-                
-                
+                 
                 <button class='submit-btn'>Submit</button>
             </form>
         </div>
@@ -59,13 +57,13 @@
         <button class='dropdown'>Delete Event</button>
         <div class="dropdown-menu">
             <form class='delete'>
-                <ul>
-                    <li>    
-                        <label for="id">Document id:</label>
-                        <input type="text" name='id' required>
-                    </li>
-                    <button class='submit-btn'>Submit</button>
-                </ul> 
+                <div class="inner-form">
+                    <label for="title">Title of Event:</label>
+                    <select id='id' name='id' required>
+
+                    </select>
+                </div>
+                <button class='submit-btn'>Submit</button>
             </form>
         </div>
 
