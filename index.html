@@ -8,7 +8,8 @@
         
             <link rel="stylesheet" href="../styles.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
-            <script src="../index.js"></script>
+            <script src="index.js"></script>
+            <script src="calendar.js"></script>
 
 
 
@@ -91,12 +92,12 @@
                     </div>
                     <div class="calendar">
                         <div class="month">
-                            <i class="fas fa-angle-left prev"></i>
+                            <i class="fas fa-angle-left prev" id="prev"></i>
                             <div class="date">
                                 <h1></h1>
                                 <p></p>
                             </div>
-                            <i class="fas fa-angle-right next"></i>
+                            <i class="fas fa-angle-right next" id="next"></i>
                         </div>
                         <div class="weekdays">
                             <div>Mon</div>
@@ -118,15 +119,14 @@
                 <div class="section" id="contact">
 
                 </div>
-
+                <footer>
+                    <a href="login.html">Admin Page</a>
+                </footer>
                 
 
             </div>
 
             
-
-
-            <script type="module" src="main.js"></script>
 
             <script>
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

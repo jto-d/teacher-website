@@ -9,6 +9,11 @@
     font-family: 'nunito';
 }
 
+footer {
+    background-color: #222222;
+    height: 30vh;
+}
+
 body{
     background-color: #111111;
 }
