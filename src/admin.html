@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/admin.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Admin Page</h1>
+        <button class='dropdown'>Upload Event</button>
+        <div class='dropdown-menu'>
+            <form class='add'>
+                <div class="top-form">
+                    <div class="inner-form">
+                        <label for='classname'>Class</label>
+                        <select id='classname' name='classname' required>
+                            <option value="gov">AP Gov</option>
+                            <option value="accel">Accel US History I</option>
+                            <option value="econ">CP Economics</option>
+                            <option value="crime">CP Criminal Law</option>
+                        </select>
+                    </div>
+                    <div class="inner-form">
+                        <label for='type'>Type</label>
+                        <select id='type' id='selectid' name='type' required>
+                            <option value="homework">Homework</option>
+                            <option value="test">Test</option>
+                            <option value="project">Project</option>
+                            <option value="quiz">Quiz</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="inner-form">
+                    <label for='title'>Title</label>
+                    <input type='text' name='name' required>
+                </div>
+                
+                <div class="inner-form">
+                    <label for='description'>Description</label>
+                    <textarea name='description' required></textarea>
+                </div>
+                
+                <div class="inner-form">
+                    <label for='date'>Date</label>
+                    <input type='text' name='date' value='dd-mm-yy' required>
+                </div>
+                 
+                <button class='submit-btn'>Submit</button>
+            </form>
+        </div>
+        
+        <button class='dropdown'>Delete Event</button>
+        <div class="dropdown-menu">
+            <form class='delete'>
+                <div class="inner-form">
+                    <label for="title">Title of Event:</label>
+                    <select id='id' name='id' required>
+
+                    </select>
+                </div>
+                <button class='submit-btn'>Submit</button>
+            </form>
+        </div>
+
+        <button class='dropdown'>Update Event</button>
+        <div class="dropdown-menu">
+            <form class='update'>
+                <ul>
+                    <li>    
+                        <label for="id">Document id:</label>
+                        <input type="text" name='id' required>
+                    </li>
+                    <button class='submit-btn'>Submit</button>
+                </ul>
+            </form>
+        </div>
+        
+    </div>
+    
+    
+
+    <script src='bundle.js'></script>
+    <script>
+        var acc = document.getElementsByClassName("dropdown");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
