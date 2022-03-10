@@ -1,34 +1,35 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
 
 module.exports = {
   entry: {
-    calendar: './src/js/calendar.js',
-    admin: './src/js/admin.js',
-    login: './src/js/login.js'
+    calendar: './src/calendar.js',
+    admin: './src/admin.js',
+    login: './src/login.js'
   },
   output: {
-    path: path.resolve(__dirname, 'build', 'target'),
+    path: path.resolve(__dirname, 'dist', 'js'),
     publicPath: '/',
     filename: '[name].bundle.js',
     chunkFilename: '[id].bundle_[chunkhash].js',
     sourceMapFilename: '[file].map'
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'calendar.html',
-      template: 'src/calendar.html',
-      chunks: ['calendar']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'admin.html',
-      template: 'src/admin.html',
-      chunks: ['admin']
-    }),
-    new HtmlWebpackPlugin({
-        filename: 'login.html',
-        template: 'src/login.html',
-        chunks: ['login']
-      })
-  ]
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     filename: 'calendar.html',
+  //     template: 'src/calendar.html',
+  //     chunks: ['calendar']
+  //   }),
+  //   new HtmlWebpackPlugin({
+  //     filename: 'admin.html',
+  //     template: 'src/admin.html',
+  //     chunks: ['admin']
+  //   }),
+  //   new HtmlWebpackPlugin({
+  //       filename: 'login.html',
+  //       template: 'src/login.html',
+  //       chunks: ['login'],
+  //     })
+  // ]
   
 };
