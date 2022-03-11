@@ -1,4 +1,33 @@
+// Firebase initialization
+import { initializeApp } from "/firebase/app/dist/index.cjs.js";
+import { getDatabase, ref, set, child, get } from "/firebase/database";
 
+
+// Set the configuration for your app
+// TODO: Replace with your app's config object
+const firebaseConfig = {
+  apiKey: "AIzaSyDDAyYzkAmrhWAblRWYbn2fi2L_i0JhHqY",
+  authDomain: "calendar-7a864.firebaseapp.com",
+  databaseURL: "https://calendar-7a864-default-rtdb.firebaseio.com/",
+  storageBucket: "calendar-7a864.appspot.com"
+};
+const firebaseApp = initializeApp(firebaseConfig);
+
+// Get a reference to the storage service, which is used to create references in your storage bucket
+const dbRef = ref(getDatabase())
+
+let events = []
+get(child(dbRef, `events/${0}`)).then((snapshot) => {
+    if(snapshot.exists()) {
+      let snap = snapshot.val()
+      let e = new Date(snap["year"],snap["month"],snap["day"])
+      events.push(e)
+    } else {
+      console.log("No data available")
+    }
+  }).catch((error) => {
+    console.error(error)
+  })
 
 //Calendar initialization
 //
