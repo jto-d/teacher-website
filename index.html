@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mr. Boogaard</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css">
+        <link rel="shortcut icon" type="image/x-icon" href="2234697.png" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="index.js"></script>
+<style>
+.mySlides {display:none}
+</style>
+
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-light bg-nav justify-content-between position-fixed w-100">
+
+                <h3 class="text-white m-3"><span class="teacherName">Jeffrey Boogaard</span></h1>
+                  <span class="navbar-one">
+                    <ul class="list-inline m-3">
+                      <li class="list-inline-item"><a class="text-decoration-none" href="#home"  id="navItem">Home</a></li>
+                      <li class="list-inline-item"><a class="text-decoration-none" href="#about" id="navItem">About</a></li>
+                      <li class="list-inline-item"><a class="text-decoration-none" href="#classes" id="navItem">Classes</a></li>
+                      <li class="list-inline-item"><a class="text-decoration-none" href="#clubs" id="navItem">Clubs</a></li>
+                      <li class="list-inline-item"><a class="text-decoration-none" href="#calendar" id="navItem">Calendar</a></li>
+                      <li class="list-inline-item"><a class="text-decoration-none" href="#contact" id="navItem">Contact</a></li>
+                  </ul>
+                  </span>
+                  <button class="activate bg-white border-0 rounded-3 mx-3">
+                    <div class="containerOne" onclick="myFunction(this)">
+                      <div class="bar1"></div>
+                      <div class="bar2"></div>
+                      <div class="bar3"></div>
+                    </div>
+                    
+                  </button>
+                <div class="bar text-white" id="bar">
+                  <div class="help">
+                    <ul class="list-inline m-3">
+                    <li class="list-inline-item"><a class="text-decoration-none" href="#home"  id="navItem" >Home</a></li>
+                    <li class="list-inline-item"><a class="text-decoration-none" href="#about" id="navItem" >About</a></li>
+                    <li class="list-inline-item"><a class="text-decoration-none" href="#classes" id="navItem" >Classes</a></li>
+                    <li class="list-inline-item"><a class="text-decoration-none" href="#clubs" id="navItem"> Clubs</a></li>
+                    <li class="list-inline-item"><a class="text-decoration-none" href="#calendar" id="navItem" >Calendar</a></li>
+                    <li class="list-inline-item"><a class="text-decoration-none" href="#contact" id="navItem" >Contact</a></li>
+                </ul>
+                  </div>
+                  
+                </div>
+                
+          </nav>
+    
+        <div class="section bg-background" id="home">
+            <div class="w3-container pt-sm-5 m-0">
+              <div class="space"></div>
+              <div class="row justify-content-md-center">
+                <div class="col col-lg-2">
+                </div>
+                <div class="col-md-auto">
+                  <ul class="list-inline">
+                    <li class="list-inline-item m-2 nums initial" id="indexOne" onclick="numClick(1)">1</li>
+                    <li class="list-inline-item m-2 nums " id="indexTwo" onclick="numClick(2)">2</li>
+                    <li class="list-inline-item m-2 nums " id="indexThree" onclick="numClick(3)">3</li>
+                    <li class="list-inline-item m-2 nums " id="indexFour" onclick="numClick(4)">4</li>
+                    <li class="list-inline-item m-2 nums " id="indexFive" onclick="numClick(5)">5</li>
+                  </ul>
+                </div>
+                <div class="col col-lg-2">
+                </div>
+                <div class="justify-content-center" >
+                  <img src="home-pictures/boogaard.jpeg" alt="boogaard" id="mainPicture" class="mainPic mx-auto d-block border border-white border-3 rounded">
+              </div>
+              </div>
+            </div>
+            
+          </div>
+        <div class="section bg-background" id="about">
+            <div class="container">
+              <div class="space"></div>
+              <p class="text-white text-center">Hello, my name is Jeffrey Boogaard.</p>
+              <p class="text-white text-center">I teach at Haddonfield Memorial High School and have been here for _ years. </p>
+
+            </div>
+        </div>
+        <div class="section bg-background" id="classes">
+          <div class="space text-background">a</div>
+          
+          <h1 class="text-white text-center m-3">Classes</h1>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6"><div class="class w-100" id="accelUS">
+                <div class="title-container d-flex justify-content-center">
+                  <span class="class-title text-center">
+                    <h3 class="text-white m-2">Accelerated US History</h3>
+                    <br>
+                    <p class="text-white m-3">(Grades 10, 11) –  This course is designed  to  study the United  States from early exploration and settlement to Reconstruction. Current events and geographical studies are an integral part of the course requirements.</p>
+                  </span>
+                </div>
+              </div></div>
+              <div class="col-sm-6"><div class="class w-100" id="gov">
+                <div class="title-container d-flex justify-content-center">
+                  <span class="class-title text-center">
+                    <h3 class="text-white m-2">AP US Government</h3>
+                    <br>
+                    <p class="text-white m-3" >(Grade 12) - Advanced Placement U.S. Government and Politics allows students with a high interest level in government, politics, history, or law to gain a deeper understanding of how  our  federal government evolved  and  how  it  works today. Units addressed include the constitutional underpinnings of the U.S. Government, political beliefs  and behaviors, political parties, interest groups,  the  mass  media,  the  Congress,  the  Presidency,  the  bureaucracy, the Federal Courts, public policy, civil rights, and civil liberties. In addition to the textbook and supplemental readings, students are expected to follow national news events closely throughout the year. This course prepares students to take the AP test in U.S. Government and Politics in May.</p>
+                  </span>
+                  
+                </div>
+              </div></div>
+              <div class="w-100"></div>
+              <div class="col-sm-6"><div class="class w-100" id="econ">
+                <div class="title-container d-flex justify-content-center">
+                  <span class="class-title text-center">
+                    <h3 class="text-white m-2">CP Economics</h3>
+                    <br>
+                    <p class="text-white m-3" >(Grades 10, 11, 12) - This is a semester-long elective course open to juniors and seniors      that allows students to gain an introduction to the study of criminal law and criminal justice and the problems posed in the 21st century.  Topics to be addressed include the nature and causes of crime  in America; crimes  against the person; crimes against property; defenses; the criminal justice process – including criminal investigations, pretrial proceedings, trial procedures, sentencing, and corrections; the juvenile justice system; and civil rights protections for both criminals and victims.</p>
+                  </span>
+  
+                </div>
+              </div></div>
+              <div class="col-sm-6"><div class="class w-100" id="crim">
+                <div class="title-container d-flex justify-content-center">
+                  <span class="class-title text-center">
+                    <h3 class="text-white m-2">CP Criminal Law</h3>
+                    <br>
+                    <p class="text-white m-3 text-wrap" >(Grades 10, 11, 12) - This is a dynamic examination of the fundamental principles which govern economic activities at both the level of the individual and that of the aggregate economy. In addition to preparing a student in both microeconomics and macroeconomics, a major emphasis of this course is on the development of critical-thinking skills and the application of economic principles and methodologies in   problem-solving. Consequently, the course incorporates a wide variety of activities including formal instruction in writing, debates, presentations, research projects, and problem-solving competitions in addition to traditional lectures, incorporation of community resources, exams, and simulation activities</p>
+                  </span>
+                  
+                </div>
+              </div></div>
+            </div>
+          </div>
+        </div>
+        <div class="section bg-background" id="clubs">
+          <div class="space"></div>
+          <div class="space"></div>
+          <h2 class="text-white text-center">Clubs</h2>
+          <div class="d-flex justify-content-center w-100">
+            <div class="w-25 h-50  d-flex justify-content-center">
+              <div class="row border border-white rounded">
+                <div class="col-sm-6">
+                  <button type="button" class="btn btn-background" onclick="clubs('acc')">Academic Challenge</button>
+                </div>
+                <div class="col-sm-6">
+                  <button type="button" class="btn btn-background" onclick="clubs('mun')">Model UN</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container mt-5 w-100 daClub text-white bg-secondary">
+            <div id="acc">
+              <h5 class="text-center"><span class="border border-white rounded p-2">Academic Challenge</span></h5>
+              <div class="content">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="description w-100 text-center">
+                      <br>
+                      This is Academic Challenge. A really cool club that is kind of like Jeopardy. 
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <img class="img-fluid p-5" src="club pictures/FLRyYhTXIAEvMZo.jpeg" alt="Academic Challenge">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="mun">
+              <h5 class="text-center"><span class="border border-white rounded p-2">Model UN</span></h5>
+            </div>
+          </div>
+        </div>
+        <div class="section bg-background " id="calendar">
+
+            asd
+        </div>
+        <div class="section bg-background " id="contact">
+            asd
+        </div>
+
+        <footer class="bg-nav p-3">
+
+          <span class="w-100 justify-content-between h-25">
+            <span class="text-white">Evan Lapid</span>
+            <img src="social logos/image-removebg-preview (4).png" alt="instagram" class="logos">
+            <a href="instagram.com/evanlapid/" class="text-white">@evanlapid</a>
+            <simg src="social logos/image-removebg-preview (2).png" alt="twitter" class="logos">
+            <a href="https://twitter.com/evantl17" class="text-white">@evantl17</a>
+            
+            <span class="text-white">Jack O'Donnell</span>
+            <img src="social logos/image-removebg-preview (4).png" alt="instagram" class="logos">
+            <a href="https://www.instagram.com/jodonnell07/" class="text-white">@jodonnell07</a>
+            <img src="social logos/image-removebg-preview (2).png" alt="twitter" class="logos">
+            <a href="https://twitter.com/jtodonnell7" class="text-white">@jtodonnell7</a>
+          </span>
+              
+        </footer>
+        <script>
+          var slideIndex = 1;
+          showDivs(slideIndex);
+          
+          function plusDivs(n) {
+            showDivs(slideIndex += n);
+          }
+          
+          function currentDiv(n) {
+            showDivs(slideIndex = n);
+          }
+          
+          function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none"; 
+
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" w3-red", "");
+            }
+            x[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " w3-red";
+          }
+
+          function myFunction(x) {
+            x.classList.toggle("change");
+            if(document.getElementById('bar').style.display == 'block'){
+              document.getElementById('bar').style.display = 'none';
+            }else{
+              document.getElementById('bar').style.display = 'block';
+            }
+            console.log('evan');
+}
+          </script>
+    </body>
+</html>
