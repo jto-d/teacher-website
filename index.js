@@ -1,9 +1,9 @@
 var pictureNum = 1;
 const pictureOne = "home-pictures/boogaard.jpeg";
-const pictureTwo = "home-pictures/3678016F-1A6A-45B0-86C4-CD2724FF92E6.jpg";
-const pictureThree = "home-pictures/F02370A4-A6AD-432F-BD0B-7DFEB05A21E9.jpg";
-const pictureFour = "home-pictures/E-Nwyl_XMAYD5W-.jpeg"
-const pictureFive = "home-pictures/574EAE32-532A-4E0A-B9D7-969958E9C68C.jpg";
+const pictureTwo = "home-pictures/574EAE32-532A-4E0A-B9D7-969958E9C68C.jpg";
+const pictureThree = "home-pictures/E-Nwyl_XMAYD5W-.jpeg";
+const pictureFour = "home-pictures/F02370A4-A6AD-432F-BD0B-7DFEB05A21E9.jpg"
+const pictureFive = "home-pictures/3678016F-1A6A-45B0-86C4-CD2724FF92E6.jpg";
 var numbers =['indexOne', 'indexTwo', 'indexThree', 'indexFour', 'indexFive'];
 var pictures = [pictureOne, pictureTwo, pictureThree, pictureFour, pictureFive];
 var Interval;
@@ -36,6 +36,9 @@ function startTimer(){
 }
 
 function numClick(x){
+    console.log('jack');
+    
+    
     clearInterval(Interval);
     Interval = setInterval(startTimer, 5000);
     if(x==1){
@@ -52,21 +55,27 @@ function numClick(x){
     document.getElementById(numbers[pictureNum]).style.color = "aqua";
     document.getElementById('mainPicture').src = pictures[x-1];
 }
-var current = 1;
-function changeAcChal(){
 
-    if(current == 1){
-        document.getElementById('acChal').style.display = 'block';
-        document.getElementById('modelUN').style.display = 'none';
-        current = 2;
-    }
-}
+var a = document.getElementsByClassName("slideshow");
+$(a).on('click', function() {
+    if ($('#form').css('opacity') == 0) $('#form').css('opacity', 1);
+    else $('#form').css('opacity', 0);
+});
 
-function changeModelUN(){
-    if(current == 2){
-        document.getElementById('acChal').style.display = 'none';
-        document.getElementById('modelUN').style.display = 'block';
-        current = 1;
+function clubs(x){
+    if(x == 'acc'){
+        if(document.getElementById('acc').style.display = 'none'){
+            document.getElementById('acc').style.display = 'block'
+            document.getElementById('mun').style.display = 'none'
+        }
+        else{
+
+        }
     }
-   
+    if(x == 'mun'){
+        if(document.getElementById('mun').style.display = 'none'){
+            document.getElementById('mun').style.display = 'block';
+            document.getElementById('acc').style.display = 'none';
+        }
+    }
 }
