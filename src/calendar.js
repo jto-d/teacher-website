@@ -1,6 +1,6 @@
 // Firebase initialization
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, child, get } from "firebase/database";
+import { initializeApp } from "/firebase/app/dist/index.cjs.js";
+import { getDatabase, ref, set, child, get } from "/firebase/database";
 
 
 // Set the configuration for your app
@@ -20,7 +20,6 @@ let events = []
 get(child(dbRef, `events/${0}`)).then((snapshot) => {
     if(snapshot.exists()) {
       let snap = snapshot.val()
-      console.log("Event Found")
       let e = new Date(snap["year"],snap["month"],snap["day"])
       events.push(e)
     } else {
