@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { 
   onSnapshot, getFirestore, collection,
   setDoc, query, orderBy, deleteDoc, where, doc,
-  getDoc, updateDoc
+  getDoc, updateDoc, addDoc
 } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -29,12 +29,11 @@ const colRef = collection(db, "events")
 // // queries
 const q = query(colRef, orderBy('classname'))
 
-
+let events = []
 
 // real time data collection
 // instead of colRef, use q to synthesize with queries
 onSnapshot(q, (snapshot) => {
-  let events = []
   snapshot.docs.forEach((doc) => {
     events.push({ ...doc.data(), id: doc.id })
   })
@@ -46,12 +45,13 @@ const addEventForm = document.querySelector('.add')
 addEventForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
-  setDoc(colRef, 'events', addEventForm.name.value), {
+  addDoc(colRef, {
     classname: addEventForm.classname.value,
+    description: addEventForm.description.value,
     event: addEventForm.name.value,
     type: addEventForm.type.value,
     date: addEventForm.date.value
-  }
+  })
   .then(() => {
     addEventForm.reset()
   })
