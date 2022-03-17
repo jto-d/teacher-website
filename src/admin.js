@@ -26,7 +26,7 @@ console.log('success')
 // refer to collection
 const colRef = collection(db, "events")
 
-// // queries
+// queries
 const q = query(colRef, orderBy('classname'))
 
 let events = []
