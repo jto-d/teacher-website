@@ -1,5 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -13,19 +13,6 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[id].bundle_[chunkhash].js',
     sourceMapFilename: '[file].map'
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          format: {
-            comments: false,
-          },
-        },
-        extractComments: false,
-      }),
-    ],
   },
   // plugins: [
   //   new HtmlWebpackPlugin({
