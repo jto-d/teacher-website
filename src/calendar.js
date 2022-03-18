@@ -1,6 +1,6 @@
 // Firebase initialization
-import { initializeApp } from "/firebase/app/dist/index.cjs.js";
-import { getDatabase, ref, set, child, get } from "/firebase/database";
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, set, child, get, onSnapshot } from "firebase/database";
 
 
 // Set the configuration for your app
@@ -11,23 +11,42 @@ const firebaseConfig = {
   databaseURL: "https://calendar-7a864-default-rtdb.firebaseio.com/",
   storageBucket: "calendar-7a864.appspot.com"
 };
-const firebaseApp = initializeApp(firebaseConfig);
 
-// Get a reference to the storage service, which is used to create references in your storage bucket
-const dbRef = ref(getDatabase())
+initializeApp(firebaseConfig)
+
+// init database
+const db = getFirestore()
+console.log('success')
+
+// refer to collection
+const colRef = collection(db, "events")
+
+// queries
+const q = query(colRef, orderBy('date'))
 
 let events = []
-get(child(dbRef, `events/${0}`)).then((snapshot) => {
-    if(snapshot.exists()) {
-      let snap = snapshot.val()
-      let e = new Date(snap["year"],snap["month"],snap["day"])
-      events.push(e)
-    } else {
-      console.log("No data available")
-    }
-  }).catch((error) => {
-    console.error(error)
+
+// real time data collection
+// instead of colRef, use q to synthesize with queries
+onSnapshot(q, (snapshot) => {
+  snapshot.docs.forEach((doc) => {
+    events.push({ ...doc.data(), id: doc.id })
   })
+  console.log(events)
+})
+
+// get(child(dbRef, `events/${0}`)).then((snapshot) => {
+//     if(snapshot.exists()) {
+//       let snap = snapshot.val()
+//       console.log("Event Found")
+//       let e = new Date(snap["year"],snap["month"],snap["day"])
+//       events.push(e)
+//     } else {
+//       console.log("No data available")
+//     }
+//   }).catch((error) => {
+//     console.error(error)
+//   })
 
 //Calendar initialization
 //

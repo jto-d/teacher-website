@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { 
   onSnapshot, getFirestore, collection,
   setDoc, query, orderBy, deleteDoc, where, doc,
-  getDoc, updateDoc
+  getDoc, updateDoc, addDoc
 } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -26,15 +26,14 @@ console.log('success')
 // refer to collection
 const colRef = collection(db, "events")
 
-// // queries
+// queries
 const q = query(colRef, orderBy('classname'))
 
-
+let events = []
 
 // real time data collection
 // instead of colRef, use q to synthesize with queries
 onSnapshot(q, (snapshot) => {
-  let events = []
   snapshot.docs.forEach((doc) => {
     events.push({ ...doc.data(), id: doc.id })
   })
@@ -46,12 +45,13 @@ const addEventForm = document.querySelector('.add')
 addEventForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
-  setDoc(colRef, 'events', addEventForm.name.value), {
+  addDoc(colRef, {
     classname: addEventForm.classname.value,
+    description: addEventForm.description.value,
     event: addEventForm.name.value,
     type: addEventForm.type.value,
     date: addEventForm.date.value
-  }
+  })
   .then(() => {
     addEventForm.reset()
   })
@@ -60,14 +60,14 @@ addEventForm.addEventListener('submit', (e) => {
 // delete event
 const deleteEventForm = document.querySelector('.delete')
 
-let select = document.queryElementById("selectid")
+let select = document.getElementById("selectid")
 let options = []
 for(let i=0;i<events.length;i++) {
   options.append(events[i].name.value)
 }
 for(let i = 0; i< options.length; i++) {
   let opt = options[i]
-  let el = document.createElemnet("option")
+  let el = document.createElement("option")
   el.textContent = opt;
   el.value = opt;
   select.appendChild(el);
