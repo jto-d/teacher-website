@@ -17,6 +17,7 @@ window.onload = function() {
 }
 
 function startTimer(){
+        console.log("run");
         document.getElementById('mainPicture').src = pictures[pictureNum];
         
         for(var i = 0;i<numbers.length;i++){

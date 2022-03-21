@@ -1,6 +1,6 @@
 // Firebase initialization
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, child, get, onSnapshot } from "firebase/database";
+import { initializeApp } from "/firebase/app/dist/index.cjs.js";
+import { getDatabase, ref, set, child, get } from "/firebase/database";
 
 
 // Set the configuration for your app
@@ -11,51 +11,38 @@ const firebaseConfig = {
   databaseURL: "https://calendar-7a864-default-rtdb.firebaseio.com/",
   storageBucket: "calendar-7a864.appspot.com"
 };
+const firebaseApp = initializeApp(firebaseConfig);
 
-initializeApp(firebaseConfig)
-
-// init database
-const db = getFirestore()
-console.log('success')
-
-// refer to collection
-const colRef = collection(db, "events")
-
-// queries, sort by date
-const q = query(colRef, orderBy('date'))
+// Get a reference to the storage service, which is used to create references in your storage bucket
+const dbRef = ref(getDatabase())
 
 let events = []
-
-// real time data collection
-// get a snapshot of events from the database reference (sorted by date)
-onSnapshot(q, (snapshot) => {
-  snapshot.docs.forEach((doc) => {
-    events.push({ ...doc.data(), id: doc.id })
+get(child(dbRef, `events/${0}`)).then((snapshot) => {
+    if(snapshot.exists()) {
+      let snap = snapshot.val()
+      let e = new Date(snap["year"],snap["month"],snap["day"])
+      events.push(e)
+    } else {
+      console.log("No data available")
+    }
+  }).catch((error) => {
+    console.error(error)
   })
-  console.log(events)
-})
-
-// get(child(dbRef, `events/${0}`)).then((snapshot) => {
-//     if(snapshot.exists()) {
-//       let snap = snapshot.val()
-//       console.log("Event Found")
-//       let e = new Date(snap["year"],snap["month"],snap["day"])
-//       events.push(e)
-//     } else {
-//       console.log("No data available")
-//     }
-//   }).catch((error) => {
-//     console.error(error)
-//   })
 
 //Calendar initialization
 //
 
 const date = new Date()
 
+const leapYears = [2024,2028,2032,2036,2040,2044]
+if(leapYears.includes(date.getFullYear)) {
+    months[1][1]=29
+}
+
 const presMonth = date.getMonth()
 
-// create calendar
+
+
 const calendar = () => {   
     // document.getElementById("event-left").style.visibility="hidden"
     // document.getElementById("event-right").style.visibility="hidden"
@@ -74,13 +61,6 @@ const calendar = () => {
         ["November", 30],
         ["December", 31]
     ]
-    
-    // account for leap years
-    // add a 29th day to February
-    const leapYears = [2024,2028,2032,2036,2040,2044]
-    if(leapYears.includes(date.getFullYear)) {
-        months[1][1]=29
-    }
 
     const currentMonth = date.getMonth()
     
@@ -101,18 +81,12 @@ const calendar = () => {
 
 
     var days = []
-    
-    // fill in the calendar with days
     for(var day = 1; day<=months[currentMonth][1]; day++) {
         let added = false
-        
-        // check if the day is today and add if true
         if(day == date.getDate() && currentMonth==presMonth) {
             days.push(`<div class="today">${day}</div>`)
             added = true
         }
-      
-        // run through the list of arrays, if there is an event on that date, add with event tag
         try {
             for(let el of events) { 
                 if(day.toString()==el.getDate() && currentMonth==el.getMonth()) {
@@ -123,8 +97,6 @@ const calendar = () => {
         } catch (error){
             console.error(error)
         }
-      
-        // if not today and no event add without a tag
         if(!added) 
             days.push(`<div>${day}</div>`)        
     }
@@ -157,17 +129,18 @@ const calendar = () => {
     }
 }
 
-// click previous arrow, reinitialize calendar with previous month
 document.getElementById("prev").addEventListener("click", () => {
     date.setMonth(date.getMonth() - 1)
     calendar()
   })
-
-// click next arrow, reinitialize calendar with next month
+  
 document.getElementById("next").addEventListener("click", () => {
     date.setMonth(date.getMonth() + 1)
     calendar()
   })
 
-// initialize calendar
+  
 calendar()
+
+
+
