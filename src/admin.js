@@ -73,6 +73,7 @@ for(let i = 0; i< options.length; i++) {
   select.appendChild(el);
 }
 
+// submit button for delete form
 deleteEventForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
