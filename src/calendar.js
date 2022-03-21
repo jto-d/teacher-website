@@ -21,13 +21,13 @@ console.log('success')
 // refer to collection
 const colRef = collection(db, "events")
 
-// queries
+// queries, sort by date
 const q = query(colRef, orderBy('date'))
 
 let events = []
 
 // real time data collection
-// instead of colRef, use q to synthesize with queries
+// get a snapshot of events from the database reference (sorted by date)
 onSnapshot(q, (snapshot) => {
   snapshot.docs.forEach((doc) => {
     events.push({ ...doc.data(), id: doc.id })
@@ -53,15 +53,9 @@ onSnapshot(q, (snapshot) => {
 
 const date = new Date()
 
-const leapYears = [2024,2028,2032,2036,2040,2044]
-if(leapYears.includes(date.getFullYear)) {
-    months[1][1]=29
-}
-
 const presMonth = date.getMonth()
 
-
-
+// create calendar
 const calendar = () => {   
     // document.getElementById("event-left").style.visibility="hidden"
     // document.getElementById("event-right").style.visibility="hidden"
@@ -80,6 +74,13 @@ const calendar = () => {
         ["November", 30],
         ["December", 31]
     ]
+    
+    // account for leap years
+    // add a 29th day to February
+    const leapYears = [2024,2028,2032,2036,2040,2044]
+    if(leapYears.includes(date.getFullYear)) {
+        months[1][1]=29
+    }
 
     const currentMonth = date.getMonth()
     
@@ -100,12 +101,18 @@ const calendar = () => {
 
 
     var days = []
+    
+    // fill in the calendar with days
     for(var day = 1; day<=months[currentMonth][1]; day++) {
         let added = false
+        
+        // check if the day is today and add if true
         if(day == date.getDate() && currentMonth==presMonth) {
             days.push(`<div class="today">${day}</div>`)
             added = true
         }
+      
+        // run through the list of arrays, if there is an event on that date, add with event tag
         try {
             for(let el of events) { 
                 if(day.toString()==el.getDate() && currentMonth==el.getMonth()) {
@@ -116,6 +123,8 @@ const calendar = () => {
         } catch (error){
             console.error(error)
         }
+      
+        // if not today and no event add without a tag
         if(!added) 
             days.push(`<div>${day}</div>`)        
     }
@@ -148,18 +157,17 @@ const calendar = () => {
     }
 }
 
+// click previous arrow, reinitialize calendar with previous month
 document.getElementById("prev").addEventListener("click", () => {
     date.setMonth(date.getMonth() - 1)
     calendar()
   })
-  
+
+// click next arrow, reinitialize calendar with next month
 document.getElementById("next").addEventListener("click", () => {
     date.setMonth(date.getMonth() + 1)
     calendar()
   })
 
-  
+// initialize calendar
 calendar()
-
-
-
