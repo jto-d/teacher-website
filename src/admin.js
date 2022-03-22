@@ -1,3 +1,4 @@
+
 import { initializeApp } from "firebase/app";
 import { 
   onSnapshot, getFirestore, collection,
@@ -40,7 +41,6 @@ onSnapshot(q, (snapshot) => {
 
 
   const deleteId = document.getElementById("deleteId")
-  const updateId = document.getElementById("updateId")
   
   
   snapshot.docs.forEach((doc) => {
@@ -58,7 +58,6 @@ onSnapshot(q, (snapshot) => {
   // delete event
   // ***** COPY FOR UPDATE FORM *****
   deleteId.innerHTML = options.join('')
-  updateId.innerHTML = options.join('')
 
   // create update options
 })
@@ -104,21 +103,9 @@ deleteEventForm.addEventListener('submit', (e) => {
 //     console.log(doc.data(), doc.id)
 //   })
 
-// update a document
-const updateForm = document.querySelector('.update')
-updateForm.addEventListener('submit', (e) => {
-  e.preventDefault()
 
-  const docRef = doc(db, 'events', updateForm.updateId.value)
-
-  //make html update form
-  //work on accordion css for all
+//make html update form
+//work on accordion css for all
 
   //update form should include field of update and what to update it to
-  updateDoc(docRef, {
-    title: 'updated'
-  })
-  .then(() => {
-    updateForm.reset()
-  })
-})
+
