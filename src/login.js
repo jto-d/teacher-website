@@ -34,11 +34,25 @@ console.log('success')
 // access login-info
 const colRef = collection(db, "login-info")
 
+const form = document.querySelector("modal-content animate")
+let info = ""
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  let usernameInput = form.uname.value
+  let passwordInput = form.uname.value
+
+  if(usernameInput == info.user && passwordInput == info.password) {
+    window.location.href = "../static/admin.html"
+  } else {
+    form.reset()
+  }
+})
 // print login-info
 onSnapshot(colRef, (snapshot) => {
-  let info = []
   snapshot.docs.forEach((doc) => {
-    info.push({ ...doc.data(), id: doc.id, password: doc.password, user: doc.user })
+    info = { ...doc.data(), id: doc.id, password: doc.password, user: doc.user }
   })
   console.log(info)
 })
