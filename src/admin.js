@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { 
   onSnapshot, getFirestore, collection,
   setDoc, query, orderBy, deleteDoc, where, doc,
-  getDoc, updateDoc, addDoc
+  getDocs, updateDoc, addDoc
 } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -27,17 +27,40 @@ console.log('success')
 const colRef = collection(db, "events")
 
 // queries
-const q = query(colRef, orderBy('classname'))
+const q = query(colRef, orderBy('date'))
 
-let events = []
+
 
 // real time data collection
 // instead of colRef, use q to synthesize with queries
 onSnapshot(q, (snapshot) => {
+  let events = []
+  let options = []
+
+
+
+  const deleteId = document.getElementById("deleteId")
+  const updateId = document.getElementById("updateId")
+  
+  
   snapshot.docs.forEach((doc) => {
     events.push({ ...doc.data(), id: doc.id })
   })
   console.log(events)
+
+  // create delete options
+  events.forEach((event) => {
+    options.push(`<option value='${event.id}'>${event.event}</option>`)
+  })
+  
+  console.log(options)
+
+  // delete event
+  // ***** COPY FOR UPDATE FORM *****
+  deleteId.innerHTML = options.join('')
+  updateId.innerHTML = options.join('')
+
+  // create update options
 })
 
 // add event
@@ -57,24 +80,14 @@ addEventForm.addEventListener('submit', (e) => {
   })
 })
 
-// delete event
-// ***** COPY FOR UPDATE FORM *****
+
+
 const deleteEventForm = document.querySelector('.delete')
-
-const deleteID = document.getElementById("deleteID")
-let deleteOptions = []
-for(let i=0;i<events.length;i++) {
-  options.push(`<option value=${events[i].id.value}>${events[i].name.value}</option>`)
-}
-
-deleteID.innerHTML = deleteOptions.join('')
-
-
 // submit button for delete form
 deleteEventForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
-  const docRef = doc(db, 'events', deleteEventForm.deleteID.value)
+  const docRef = doc(db, 'events', deleteEventForm.deleteId.value)
 
   deleteDoc(docRef)
     .then(() => {
@@ -83,20 +96,20 @@ deleteEventForm.addEventListener('submit', (e) => {
 
 })
 
-// get a single document
-const docRef = doc(db, 'events', '6uERDX0Iet8cg8JZENij')
+// // get a single document
+// const docRef = doc(db, 'events', '6uERDX0Iet8cg8JZENij')
 
-getDoc(docRef)
-  .then((doc) => {
-    console.log(doc.data(), doc.id)
-  })
+// getDoc(docRef)
+//   .then((doc) => {
+//     console.log(doc.data(), doc.id)
+//   })
 
 // update a document
 const updateForm = document.querySelector('.update')
 updateForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
-  const docRef = doc(db, 'events', updateForm.id.value)
+  const docRef = doc(db, 'events', updateForm.updateId.value)
 
   //make html update form
   //work on accordion css for all
