@@ -3,11 +3,13 @@
     <head>
         <title>Mr. Boogaard</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="./css/main.css">
         <link rel="shortcut icon" type="image/x-icon" href="2234697.png" />
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="index.js"></script>
+        <script src="../js/index.js"></script>
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
 <style>
 .mySlides {display:none}
 </style>
@@ -70,12 +72,14 @@
                 <div class="col col-lg-2">
                 </div>
                 <div class="justify-content-center" >
-                  <img src="home-pictures/boogaard.jpeg" alt="boogaard" id="mainPicture" class="mainPic mx-auto d-block border border-white border-3 rounded">
+                  <img src="home-pictures/boogaard.jpeg" alt="boogaard" id="mainPicture" class="mainPic mx-auto d-block border border-white border-3 shadow rounded">
               </div>
+              
               </div>
+                <h3 class="text-white text-center"><span class="shadow-sm rounded white">Welcome To Mr. Boogaard's Page!</span></h3>
             </div>
             
-          </div>
+          </div> 
         <div class="section bg-background" id="about">
             <div class="container">
               <div class="space"></div>
@@ -171,30 +175,68 @@
             </div>
           </div>
         </div>
-        <div class="section bg-background " id="calendar">
+        
+        
+        <div class="section bg-background" id="calendar">
+          <div id="event-left">
+                yuh
+            </div>
+            <div class="calendar">
+                <div class="month">
+                    <i class="fas fa-angle-left prev" id="prev"></i>
+                    <div class="date">
+                        <h1></h1>
+                        <p></p>
+                    </div>
+                    <i class="fas fa-angle-right next" id="next"></i>
+                </div>
+                <div class="weekdays">
+                    <div>Mon</div>
+                    <div>Tues</div>
+                    <div>Wed</div>
+                    <div>Thurs</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                    <div>Sun</div>
+                </div>
+                <div class="days"></div>
+            </div>
+            <div id="event-right">
+                help me
+    
+            <script src="../js/calendar.bundle.js"></script>
 
-            asd
-        </div>
+          </div>
+        </div>  
+      
+
         <div class="section bg-background " id="contact">
             asd
         </div>
 
-        <footer class="bg-nav p-3">
-
-          <span class="w-100 justify-content-between h-25">
+        <footer class="bg-nav p-3 w-100">
+          <div class="row">
+           <div class="col d-flex justify-content-between">
             <span class="text-white">Evan Lapid</span>
             <img src="social logos/image-removebg-preview (4).png" alt="instagram" class="logos">
             <a href="instagram.com/evanlapid/" class="text-white">@evanlapid</a>
-            <simg src="social logos/image-removebg-preview (2).png" alt="twitter" class="logos">
+            <img src="social logos/image-removebg-preview (2).png" alt="twitter" class="logos">
             <a href="https://twitter.com/evantl17" class="text-white">@evantl17</a>
-            
+           </div>
+           <div class="col-1">
+
+           </div>
+           <div class="col d-flex justify-content-between">
             <span class="text-white">Jack O'Donnell</span>
             <img src="social logos/image-removebg-preview (4).png" alt="instagram" class="logos">
             <a href="https://www.instagram.com/jodonnell07/" class="text-white">@jodonnell07</a>
             <img src="social logos/image-removebg-preview (2).png" alt="twitter" class="logos">
             <a href="https://twitter.com/jtodonnell7" class="text-white">@jtodonnell7</a>
-          </span>
-              
+           </div>
+           <div class="col-4 d-flex justify-content-center">
+            <a href="dist/static/login.html" class="text-white">Login Page</a>
+           </div>
+          </div>
         </footer>
         <script>
           var slideIndex = 1;

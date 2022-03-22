@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "nunito";
-  src: url("Nunito-Regular.ttf");
+  src: url("../fonts/Nunito-Regular.ttf");
 }
 .nums {
   cursor: pointer;
@@ -131,7 +131,7 @@ nav {
 }
 
 #accelUS {
-  background-image: url("classes pictures/FBgmTe2XsAI4p2M.jpeg");
+  background-image: url("../classes pictures/FBgmTe2XsAI4p2M.jpeg");
   background-size: 100% 100%;
   height: 50vh;
   transition: 0.5s ease;
@@ -139,7 +139,7 @@ nav {
 }
 
 #accelUS:hover {
-  background-image: url("classes pictures/FBgmTe2XsAI4p2M.jpg");
+  background-image: url("../classes pictures/FBgmTe2XsAI4p2M.jpg");
   background-size: 100% 100%;
 }
 
@@ -153,7 +153,7 @@ nav {
 }
 
 #gov {
-  background-image: url("classes pictures/thinkorswim_installer.jpeg");
+  background-image: url("../classes pictures/thinkorswim_installer.jpeg");
   background-size: 100% 100%;
   height: 50vh;
   transition: 0.5s ease;
@@ -161,7 +161,7 @@ nav {
 }
 
 #gov:hover {
-  background-image: url("classes pictures/thinkorswim_installer.jpg");
+  background-image: url("../classes pictures/thinkorswim_installer.jpg");
   background-size: 100% 100%;
 }
 
@@ -175,7 +175,7 @@ nav {
 }
 
 #crim {
-  background-image: url("classes pictures/criminal law.jpg");
+  background-image: url("../classes pictures/criminal law.jpg");
   background-size: 100% 100%;
   height: 50vh;
   transition: 0.5s ease;
@@ -183,7 +183,7 @@ nav {
 }
 
 #crim:hover {
-  background-image: url("classes pictures/criminal law-3.jpg");
+  background-image: url("../classes pictures/criminal law-3.jpg");
   background-size: 100% 100%;
 }
 
@@ -197,7 +197,7 @@ nav {
 }
 
 #econ {
-  background-image: url("classes pictures/IMG_1185.jpg");
+  background-image: url("../classes pictures/IMG_1185.jpg");
   background-size: 100% 100%;
   height: 50vh;
   transition: 0.5s ease;
@@ -205,7 +205,7 @@ nav {
 }
 
 #econ:hover {
-  background-image: url("classes pictures/IMG_1185-2.jpg");
+  background-image: url("../classes pictures/IMG_1185-2.jpg");
   background-size: 100% 100%;
 }
 
@@ -316,7 +316,7 @@ ul.list-group:after {
 }
 
 .logos {
-  width: 2%;
+  width: 5%;
   height: auto;
 }
 
