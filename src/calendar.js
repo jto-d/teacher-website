@@ -108,7 +108,7 @@ const calendar = () => {
     
     // fill in the calendar with days
     for(var day = 1; day<=months[currentMonth][1]; day++) {
-        let added = false
+        let added = false 
         
         // check if the day is today and add if true
         if(day == date.getDate() && currentMonth==presMonth) {
@@ -121,6 +121,7 @@ const calendar = () => {
             for(let el of events) { 
                 if(day.toString()==el.getDate() && currentMonth==el.getMonth()) {
                     days.push(`<div class="calEvent">${day}</div>`)
+                    console.log("event")
                     added = true
                 }
             }        
