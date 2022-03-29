@@ -1,6 +1,6 @@
 // Firebase initialization
 import { initializeApp } from "firebase/app";
-import { getFirestore, onSnapshot, collection, query, orderBy } from "firebase/firestore";
+import { getFirestore, onSnapshot, collection, query, orderBy, getDocs } from "firebase/firestore";
 
 
 // Set the configuration for your app
@@ -30,14 +30,24 @@ const q = query(colRef, orderBy('date'))
 
 let events = []
 
+const querySnapshot = await getDocs(q);
+
+querySnapshot.forEach((doc) => {
+    events.push({ ...doc.data(), id: doc.id })
+});
+
+console.log(events)
+
+// onSnapshot(q, (snapshot) => {
+//     snapshot.docs.forEach((doc) => {
+//       events.push({ ...doc.data(), id: doc.id })
+//     })
+//     console.log(events)
+// })
+
 // real time data collection
 // get a snapshot of events from the database reference (sorted by date)
-onSnapshot(q, (snapshot) => {
-  snapshot.docs.forEach((doc) => {
-    events.push({ ...doc.data(), id: doc.id })
-  })
-  console.log(events)
-})
+
 
 // get(child(dbRef, `events/${0}`)).then((snapshot) => {
 //     if(snapshot.exists()) {
@@ -63,6 +73,9 @@ const presMonth = date.getMonth()
 const calendar = () => {   
     // document.getElementById("event-left").style.visibility="hidden"
     // document.getElementById("event-right").style.visibility="hidden"
+
+    
+    
     console.log("Calendar run")
     const months = [
         ["January", 31],
@@ -106,6 +119,7 @@ const calendar = () => {
 
     var days = []
     
+    
     // fill in the calendar with days
     for(var day = 1; day<=months[currentMonth][1]; day++) {
         let added = false 
@@ -113,22 +127,28 @@ const calendar = () => {
         // check if the day is today and add if true
         if(day == date.getDate() && currentMonth==presMonth) {
             days.push(`<div class="today">${day}</div>`)
+            console.log("today")
             added = true
         }
       
         // run through the list of arrays, if there is an event on that date, add with event tag
-        try {
-            for(let el of events) { 
-                if(day.toString()==el.getDate() && currentMonth==el.getMonth()) {
-                    days.push(`<div class="calEvent">${day}</div>`)
-                    console.log("event")
-                    added = true
-                }
-            }        
-        } catch (error){
-            console.error(error)
-        }
-      
+        events.forEach((event) => { 
+            let eventDay = event.date.substring(3,5)
+            let dayString = day.toString()
+            if(dayString.length == 1) {
+                dayString = "0".concat(dayString)
+            }
+            
+            let eventMonth = parseInt(event.date.substring(0,2))-1
+
+
+            if(dayString === eventDay && currentMonth == eventMonth) {
+                days.push(`<div class="calEvent">${day}</div>`)
+                console.log("event")
+                added = true
+            }
+        })   
+    
         // if not today and no event add without a tag
         if(!added) 
             days.push(`<div>${day}</div>`)        

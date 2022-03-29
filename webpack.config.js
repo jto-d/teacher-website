@@ -27,6 +27,9 @@ module.exports = {
       }),
     ],
   },
+  experiments: {
+    topLevelAwait: true,
+  },
   // plugins: [
   //   new HtmlWebpackPlugin({
   //     filename: 'calendar.html',
