@@ -5,11 +5,11 @@
     color: #eeee;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 
 }
 .calendar {
-    margin: 6% 3% 0;
+    margin: 7% 3% 0;
     height: 40rem; 
     width: 45rem;
     border-radius: .5rem;
@@ -17,7 +17,16 @@
     box-shadow: 0 0.5rem 3rem rgba(0,0,0,0.4);
 }
 
-#event{
+.events {
+    position: absolute;
+    top: 476vh;
+    height: 20rem; 
+    width: 10rem;
+    justify-content: center;
+    text-align: center;
+}
+
+/* #event{
     height: 5rem;
     width: 10rem;
     background-color: #333333;
@@ -32,7 +41,7 @@
 
 #event p {
     margin: auto;
-}
+} */
 
 .month {
     width: 100%;

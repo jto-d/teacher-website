@@ -38,36 +38,13 @@ querySnapshot.forEach((doc) => {
 
 console.log(events)
 
-// onSnapshot(q, (snapshot) => {
-//     snapshot.docs.forEach((doc) => {
-//       events.push({ ...doc.data(), id: doc.id })
-//     })
-//     console.log(events)
-// })
-
-// real time data collection
-// get a snapshot of events from the database reference (sorted by date)
-
-
-// get(child(dbRef, `events/${0}`)).then((snapshot) => {
-//     if(snapshot.exists()) {
-//       let snap = snapshot.val()
-//       console.log("Event Found")
-//       let e = new Date(snap["year"],snap["month"],snap["day"])
-//       events.push(e)
-//     } else {
-//       console.log("No data available")
-//     }
-//   }).catch((error) => {
-//     console.error(error)
-//   })
-
 //Calendar initialization
 //
 
 const date = new Date()
 
 const presMonth = date.getMonth()
+
 
 // create calendar
 const calendar = () => {   
@@ -117,7 +94,7 @@ const calendar = () => {
     const finDate = new Date(date.getFullYear(), date.getMonth(), months[currentMonth][1]).getDay()-1
 
 
-    var days = []
+    let days = []
     
     
     // fill in the calendar with days
@@ -143,7 +120,7 @@ const calendar = () => {
 
 
             if(dayString === eventDay && currentMonth == eventMonth) {
-                days.push(`<div class="calEvent">${day}</div>`)
+                days.push(`<div class="calEvent" id="${event.id}">${day}</div>`)
                 console.log("event")
                 added = true
             }
@@ -173,13 +150,13 @@ const calendar = () => {
 
     calDays.innerHTML = prevDays.join('') + days.join('') + nextDays.join('')
 
-    const calEvents = document.querySelectorAll(".calEvent")
-    for(let el of calEvents) {
-        el.addEventListener("click", () => {
-            document.getElementById("event-left").style.visibility="visible"
-            document.getElementById("event-right").style.visibility="visible"
-        })
-    }
+    // const calEvents = document.querySelectorAll(".calEvent")
+    // for(let el of calEvents) {
+    //     el.addEventListener("click", () => {
+    //         document.getElementById("event-left").style.visibility="visible"
+    //         document.getElementById("event-right").style.visibility="visible"
+    //     })
+    // }
 }
 
 // click previous arrow, reinitialize calendar with previous month
@@ -196,3 +173,24 @@ document.getElementById("next").addEventListener("click", () => {
 
 // initialize calendar
 calendar()
+
+document.querySelectorAll(".calEvent").forEach(element => {
+    element.addEventListener("click", () => {
+        const eventsText = document.querySelector(".events")
+        
+        let elementId = element.id
+
+
+        let event = events[elementId]
+        let text = []
+        text.push(`<h1>${event.type}</h1>
+                    <h2>${event.event}</h2>
+                    <p>${event.description}</p>`)
+
+        
+
+        eventsText.innerHTML = text.join("")
+        
+        console.log("event clicked")
+    })
+})
