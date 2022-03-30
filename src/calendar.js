@@ -174,20 +174,30 @@ document.getElementById("next").addEventListener("click", () => {
 // initialize calendar
 calendar()
 
+let eventMap = new Map()
+
+events.forEach((event) => {
+    eventMap.set(event.id,event)
+})
+
+console.log(eventMap)
+
 document.querySelectorAll(".calEvent").forEach(element => {
     element.addEventListener("click", () => {
         const eventsText = document.querySelector(".events")
+        console.log("event success")
         
         let elementId = element.id
 
+        let event = eventMap.get(elementId)
 
-        let event = events[elementId]
         let text = []
+
         text.push(`<h1>${event.type}</h1>
+                    <h2>${event.classname}</h2>
                     <h2>${event.event}</h2>
                     <p>${event.description}</p>`)
 
-        
 
         eventsText.innerHTML = text.join("")
         
