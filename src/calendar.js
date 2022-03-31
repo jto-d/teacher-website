@@ -99,16 +99,9 @@ const calendar = () => {
     
     // fill in the calendar with days
     for(var day = 1; day<=months[currentMonth][1]; day++) {
-        let added = false 
+        let event = false
         
-        // check if the day is today and add if true
-        if(day == date.getDate() && currentMonth==presMonth) {
-            days.push(`<div class="today">${day}</div>`)
-            console.log("today")
-            added = true
-        }
-      
-        // run through the list of arrays, if there is an event on that date, add with event tag
+
         events.forEach((event) => { 
             let eventDay = event.date.substring(3,5)
             let dayString = day.toString()
@@ -120,15 +113,19 @@ const calendar = () => {
 
 
             if(dayString === eventDay && currentMonth == eventMonth) {
-                days.push(`<div class="calEvent" id="${event.id}">${day}</div>`)
-                console.log("event")
-                added = true
+                event = true
             }
-        })   
-    
-        // if not today and no event add without a tag
-        if(!added) 
-            days.push(`<div>${day}</div>`)        
+        })
+
+        // check if the day is today and add if true
+        if(day == date.getDate() && currentMonth==presMonth && event) {
+            days.push(`<div class="today" class="calEvent" id="${event.id}">${day}</div>`)
+        } else if (event) {
+            days.push(`<div class="calEvent" id="${event.id}">${day}</div>`)
+        } else {
+            days.push(`<div>${day}</div>`)   
+        }
+                 
     }
 
     if(currentMonth == 0)
