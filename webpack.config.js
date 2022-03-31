@@ -29,23 +29,5 @@ module.exports = {
   },
   experiments: {
     topLevelAwait: true,
-  },
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     filename: 'calendar.html',
-  //     template: 'src/calendar.html',
-  //     chunks: ['calendar']
-  //   }),
-  //   new HtmlWebpackPlugin({
-  //     filename: 'admin.html',
-  //     template: 'src/admin.html',
-  //     chunks: ['admin']
-  //   }),
-  //   new HtmlWebpackPlugin({
-  //       filename: 'login.html',
-  //       template: 'src/login.html',
-  //       chunks: ['login'],
-  //     })
-  // ]
-  
+  },  
 };
