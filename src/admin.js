@@ -79,8 +79,6 @@ addEventForm.addEventListener('submit', (e) => {
   })
 })
 
-
-
 const deleteEventForm = document.querySelector('.delete')
 // submit button for delete form
 deleteEventForm.addEventListener('submit', (e) => {
@@ -95,17 +93,4 @@ deleteEventForm.addEventListener('submit', (e) => {
 
 })
 
-// // get a single document
-// const docRef = doc(db, 'events', '6uERDX0Iet8cg8JZENij')
-
-// getDoc(docRef)
-//   .then((doc) => {
-//     console.log(doc.data(), doc.id)
-//   })
-
-
-//make html update form
-//work on accordion css for all
-
-  //update form should include field of update and what to update it to
-
+// possible add ons include an update form
