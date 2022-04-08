@@ -43,7 +43,7 @@ form.addEventListener('submit', (e) => {
   let usernameInput = form.uname.value
   let passwordInput = form.uname.value
 
-  if(usernameInput == info.user && passwordInput == info.password) {
+  if(usernameInput === info.user && passwordInput === info.password) {
     window.location.href = "../static/admin.html"
   } else {
     form.reset()
