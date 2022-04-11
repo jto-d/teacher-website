@@ -113,6 +113,13 @@ nav {
     height: auto;
   }
 }
+
+@media (max-width: 1023px){
+  .calendar{
+    display:none;
+  }
+}
+
 .bar {
   display: none;
 }
