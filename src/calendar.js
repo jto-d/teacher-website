@@ -68,6 +68,13 @@ const calendar = () => {
         ["November", 30],
         ["December", 31]
     ]
+
+    const eventColors = [
+        ["Accel US History I", "#a7bed3"],
+        ["CP Economics", "#c6e2e9"],
+        ["AP US History", "#f1ffc4"],
+        ["CP Criminal Law", "#ffcaaf"]
+    ]
     
     // account for leap years
     // add a 29th day to February
@@ -170,6 +177,12 @@ const calendar = () => {
         })
     })
 
+    events.forEach((event) => {
+        eventMap.set(event.id,event)
+    })
+    
+    console.log(eventMap)
+
     // const calEvents = document.querySelectorAll(".calEvent")
     // for(let el of calEvents) {
     //     el.addEventListener("click", () => {
@@ -196,9 +209,5 @@ calendar()
 
 let eventMap = new Map()
 
-events.forEach((event) => {
-    eventMap.set(event.id,event)
-})
 
-console.log(eventMap)
 
