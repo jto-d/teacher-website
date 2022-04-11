@@ -147,6 +147,29 @@ const calendar = () => {
 
     calDays.innerHTML = prevDays.join('') + days.join('') + nextDays.join('')
 
+    document.querySelectorAll(".calEvent").forEach(element => {
+        element.addEventListener("click", () => {
+            const eventsText = document.querySelector(".events")
+            console.log("event success")
+            
+            let elementId = element.id
+    
+            let event = eventMap.get(elementId)
+    
+            let text = []
+    
+            text.push(`<h1>${event.type}</h1>
+                        <h2>${event.classname}</h2>
+                        <h2>${event.event}</h2>
+                        <p>${event.description}</p>`)
+    
+    
+            eventsText.innerHTML = text.join("")
+            
+            console.log("event clicked")
+        })
+    })
+
     // const calEvents = document.querySelectorAll(".calEvent")
     // for(let el of calEvents) {
     //     el.addEventListener("click", () => {
@@ -179,25 +202,3 @@ events.forEach((event) => {
 
 console.log(eventMap)
 
-document.querySelectorAll(".calEvent").forEach(element => {
-    element.addEventListener("click", () => {
-        const eventsText = document.querySelector(".events")
-        console.log("event success")
-        
-        let elementId = element.id
-
-        let event = eventMap.get(elementId)
-
-        let text = []
-
-        text.push(`<h1>${event.type}</h1>
-                    <h2>${event.classname}</h2>
-                    <h2>${event.event}</h2>
-                    <p>${event.description}</p>`)
-
-
-        eventsText.innerHTML = text.join("")
-        
-        console.log("event clicked")
-    })
-})
