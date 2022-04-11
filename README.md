@@ -13,6 +13,7 @@ jack:
 - login functionality
 - css calendar events
   - different colors for different classes
+  - outline css class insert into days push
 - server using express
 
 
