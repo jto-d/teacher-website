@@ -6,8 +6,38 @@
 
 @font-face {
   font-family: "nunito";
-  src: url("Nunito-Regular.ttf");
+  src: url("../fonts/Nunito-Regular.ttf");
 }
+
+/*home page*/
+.mobile-home{
+  display:none;
+}
+@media (max-width: 569px) {
+  .slides {
+    display: none;
+  }
+  .mobile-home{
+    display:block;
+  }
+}
+
+.firstSlide{
+  height: 100vh;
+  opacity: 50%;
+}
+
+.carousel-item img{
+  width:100%;
+  height: 100vh;
+}
+
+#third-home-picture{
+  width: 100%;
+  height:100vh;
+  opacity: 50%;
+}
+
 .nums {
   cursor: pointer;
   color: white;
@@ -80,15 +110,15 @@
 }
 
 nav {
-  z-index: 1;
+  z-index: 100;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 569px) {
   .activate {
     display: none;
   }
 }
-@media all and (max-width: 480px) {
+@media all and (max-width: 569px) {
   .navbar-one {
     display: none;
   }
@@ -131,7 +161,7 @@ nav {
 }
 
 #accelUS {
-  background-image: url("classes pictures/FBgmTe2XsAI4p2M.jpeg");
+  background-image: url("../classes pictures/FBgmTe2XsAI4p2M.jpeg");
   background-size: 100% 100%;
   height: 50vh;
   transition: 0.5s ease;
@@ -139,7 +169,7 @@ nav {
 }
 
 #accelUS:hover {
-  background-image: url("classes pictures/FBgmTe2XsAI4p2M.jpg");
+  background-image: url("../classes pictures/FBgmTe2XsAI4p2M.jpg");
   background-size: 100% 100%;
 }
 
@@ -153,7 +183,7 @@ nav {
 }
 
 #gov {
-  background-image: url("classes pictures/thinkorswim_installer.jpeg");
+  background-image: url("../classes pictures/thinkorswim_installer.jpeg");
   background-size: 100% 100%;
   height: 50vh;
   transition: 0.5s ease;
@@ -161,7 +191,7 @@ nav {
 }
 
 #gov:hover {
-  background-image: url("classes pictures/thinkorswim_installer.jpg");
+  background-image: url("../classes pictures/thinkorswim_installer.jpg");
   background-size: 100% 100%;
 }
 
@@ -175,7 +205,7 @@ nav {
 }
 
 #crim {
-  background-image: url("classes pictures/criminal law.jpg");
+  background-image: url("../classes pictures/criminal law.jpg");
   background-size: 100% 100%;
   height: 50vh;
   transition: 0.5s ease;
@@ -183,7 +213,7 @@ nav {
 }
 
 #crim:hover {
-  background-image: url("classes pictures/criminal law-3.jpg");
+  background-image: url("../classes pictures/criminal law-3.jpg");
   background-size: 100% 100%;
 }
 
@@ -197,7 +227,7 @@ nav {
 }
 
 #econ {
-  background-image: url("classes pictures/IMG_1185.jpg");
+  background-image: url("../classes pictures/IMG_1185.jpg");
   background-size: 100% 100%;
   height: 50vh;
   transition: 0.5s ease;
@@ -205,7 +235,7 @@ nav {
 }
 
 #econ:hover {
-  background-image: url("classes pictures/IMG_1185-2.jpg");
+  background-image: url("../classes pictures/IMG_1185-2.jpg");
   background-size: 100% 100%;
 }
 
@@ -229,7 +259,7 @@ ul.list-group:after {
   float: left;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 575px) {
   #home {
     height: 100vh;
     width: 100%;
@@ -265,7 +295,16 @@ ul.list-group:after {
     height: 100vh;
     width: 100%;
   }
+
+  
 }
+
+@media (max-width: 870px){
+  .calendar{
+    display:none;
+  }
+}
+
 .title {
   margin-left: auto;
   margin-right: auto;
@@ -322,6 +361,16 @@ ul.list-group:after {
 
 .initial {
   color: aqua;
+}
+
+#butt{
+  color:white;
+  transition: .5s ease;
+  width: fit-content;
+}
+
+#butt:hover{
+  color:#0dcaf0;
 }
 
 /*!
